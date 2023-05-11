@@ -8,6 +8,7 @@
 #include <cmath>
 #include <time.h>
 #include "TreeInterface.h"
+#include "TreeHeuristic.h"
 #include "MersenneTwister.h"
 #include <fstream>
 #include <omp.h>
@@ -19,6 +20,9 @@ using namespace std;
 //Optimized topological node structure. This is the basic type for the data structure that will contain the post-order phylogenetic tree traversal for its processing by the kernel
 typedef struct
 {
+	int partialParsimony = 0;
+	int father = -1;//FATHER ID IN GLOBAL TREE, NEEDS CORRESPONDENCY ARRAY
+	char* characters;
 	short number_of_sons; //Number of children of the node
 	int sons_ids [MAX_SONS]; //Identifiers of the children node
 }typeNode;
@@ -27,11 +31,13 @@ typedef struct
 class PARS
 {	
 	TreeInterface* refTree; //Reference tree (BIO++)
-	
+	TreeHeuristic* treeH;
+
 	string refFileName; //reference sequences filename
 	SiteContainer* refSites; //BIO++ reference sequences
 	int n_sequences; //number of input sequences in the reference 
 	int n_sites; //input sequence length in the reference
+	int totalParsimony;
 	
 	string queryFileName; //query sequences filename
 	SiteContainer* querySites; //BIO++ query sequences
@@ -54,6 +60,7 @@ class PARS
 	char** query_sequences; //query sequences in hexadecimal codification
 	char* array_query_sequences; //query sequences in hexadecimal codification (char array)
 	
+	//ofstream solveFile;
 		
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
@@ -69,6 +76,12 @@ class PARS
 		void deleteAuxParsStructures(); //Deletes the parsNodes structure and initializes to 0 its related variables
 		/* Parsimony calculations over the original reference tree */
 		int calculateParsimonyRefTree (double &t1, double &t2); //Parsimony function code for CPU in char configuration
+		/* Parsimony calculations for each Query*/
+		int calculateParsimonyQuerys (double &t1, double &t2);
+		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
+		void cloneParsNodes(typeNode* dest);
+		void clonePars(typeNode* dst, typeNode* src);
+		//void writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony);
 		/* Main method */
 		int run (string fic_tree, double &t1, double &t2); //Main method, where the placement takes place
 		

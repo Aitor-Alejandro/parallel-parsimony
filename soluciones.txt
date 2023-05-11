@@ -1,0 +1,2344 @@
+../Datasets/salmonella/reference.phy ../Datasets/salmonella/query100.phy ../Datasets/salmonella/reftree.tree
+Initializing reference tree via BIO++
+Initializing reference tree -- DONE
+Initializing reference sequences... OK
+A total of 56 reference sequences, with length 119750
+Initializing query sequences... OK
+A total of 100 query sequences, with length 119750
+-------------
+54
+-------------
+Index: 0 Value: 3
+Index: 1 Value: 6
+Index: 2 Value: 8
+Index: 3 Value: 11
+Index: 4 Value: 13
+Index: 5 Value: 16
+Index: 6 Value: 18
+Index: 7 Value: 22
+Index: 8 Value: 23
+Index: 9 Value: 24
+Index: 10 Value: 28
+Index: 11 Value: 30
+Index: 12 Value: 31
+Index: 13 Value: 35
+Index: 14 Value: 38
+Index: 15 Value: 40
+Index: 16 Value: 44
+Index: 17 Value: 45
+Index: 18 Value: 46
+Index: 19 Value: 47
+Index: 20 Value: 48
+Index: 21 Value: 49
+Index: 22 Value: 50
+Index: 23 Value: 51
+Index: 24 Value: 54
+Index: 25 Value: 56
+Index: 26 Value: 59
+Index: 27 Value: 60
+Index: 28 Value: 63
+Index: 29 Value: 65
+Index: 30 Value: 68
+Index: 31 Value: 71
+Index: 32 Value: 74
+Index: 33 Value: 76
+Index: 34 Value: 78
+Index: 35 Value: 79
+Index: 36 Value: 82
+Index: 37 Value: 83
+Index: 38 Value: 88
+Index: 39 Value: 92
+Index: 40 Value: 95
+Index: 41 Value: 96
+Index: 42 Value: 97
+Index: 43 Value: 98
+Index: 44 Value: 99
+Index: 45 Value: 100
+Index: 46 Value: 101
+Index: 47 Value: 102
+Index: 48 Value: 103
+Index: 49 Value: 104
+Index: 50 Value: 105
+Index: 51 Value: 106
+Index: 52 Value: 107
+Index: 53 Value: 109
+Scoring reference tree
+PARSIMONY SCORE 173323
+Reference tree evaluation: Time spent: 0.040868
+-----------------------Show Tree Heuristic---------------------
+Leave:0 with id:0
+Leave:1 with id:1
+Leave:2 with id:2
+Leave:3 with id:4
+Leave:4 with id:5
+Leave:5 with id:7
+Leave:6 with id:9
+Leave:7 with id:10
+Leave:8 with id:12
+Leave:9 with id:14
+Leave:10 with id:15
+Leave:11 with id:17
+Leave:12 with id:19
+Leave:13 with id:20
+Leave:14 with id:21
+Leave:15 with id:25
+Leave:16 with id:26
+Leave:17 with id:27
+Leave:18 with id:29
+Leave:19 with id:32
+Leave:20 with id:33
+Leave:21 with id:34
+Leave:22 with id:36
+Leave:23 with id:37
+Leave:24 with id:39
+Leave:25 with id:41
+Leave:26 with id:42
+Leave:27 with id:43
+Leave:28 with id:52
+Leave:29 with id:53
+Leave:30 with id:55
+Leave:31 with id:57
+Leave:32 with id:58
+Leave:33 with id:61
+Leave:34 with id:62
+Leave:35 with id:64
+Leave:36 with id:66
+Leave:37 with id:67
+Leave:38 with id:69
+Leave:39 with id:70
+Leave:40 with id:72
+Leave:41 with id:73
+Leave:42 with id:75
+Leave:43 with id:77
+Leave:44 with id:80
+Leave:45 with id:81
+Leave:46 with id:84
+Leave:47 with id:85
+Leave:48 with id:86
+Leave:49 with id:87
+Leave:50 with id:89
+Leave:51 with id:90
+Leave:52 with id:91
+Leave:53 with id:93
+Leave:54 with id:94
+Leave:55 with id:108
+Leave 0 with ancestors:->>>-109
+Leave 1 with ancestors:->>>-3-107-109
+Leave 2 with ancestors:->>>-3-107-109
+Leave 4 with ancestors:->>>-6-8-106-107-109
+Leave 5 with ancestors:->>>-6-8-106-107-109
+Leave 7 with ancestors:->>>-8-106-107-109
+Leave 9 with ancestors:->>>-11-13-51-105-106-107-109
+Leave 10 with ancestors:->>>-11-13-51-105-106-107-109
+Leave 12 with ancestors:->>>-13-51-105-106-107-109
+Leave 14 with ancestors:->>>-16-18-24-50-51-105-106-107-109
+Leave 15 with ancestors:->>>-16-18-24-50-51-105-106-107-109
+Leave 17 with ancestors:->>>-18-24-50-51-105-106-107-109
+Leave 19 with ancestors:->>>-23-24-50-51-105-106-107-109
+Leave 20 with ancestors:->>>-22-23-24-50-51-105-106-107-109
+Leave 21 with ancestors:->>>-22-23-24-50-51-105-106-107-109
+Leave 25 with ancestors:->>>-31-49-50-51-105-106-107-109
+Leave 26 with ancestors:->>>-28-30-31-49-50-51-105-106-107-109
+Leave 27 with ancestors:->>>-28-30-31-49-50-51-105-106-107-109
+Leave 29 with ancestors:->>>-30-31-49-50-51-105-106-107-109
+Leave 32 with ancestors:->>>-48-49-50-51-105-106-107-109
+Leave 33 with ancestors:->>>-35-47-48-49-50-51-105-106-107-109
+Leave 34 with ancestors:->>>-35-47-48-49-50-51-105-106-107-109
+Leave 36 with ancestors:->>>-38-40-46-47-48-49-50-51-105-106-107-109
+Leave 37 with ancestors:->>>-38-40-46-47-48-49-50-51-105-106-107-109
+Leave 39 with ancestors:->>>-40-46-47-48-49-50-51-105-106-107-109
+Leave 41 with ancestors:->>>-45-46-47-48-49-50-51-105-106-107-109
+Leave 42 with ancestors:->>>-44-45-46-47-48-49-50-51-105-106-107-109
+Leave 43 with ancestors:->>>-44-45-46-47-48-49-50-51-105-106-107-109
+Leave 52 with ancestors:->>>-54-56-60-104-105-106-107-109
+Leave 53 with ancestors:->>>-54-56-60-104-105-106-107-109
+Leave 55 with ancestors:->>>-56-60-104-105-106-107-109
+Leave 57 with ancestors:->>>-59-60-104-105-106-107-109
+Leave 58 with ancestors:->>>-59-60-104-105-106-107-109
+Leave 61 with ancestors:->>>-63-65-103-104-105-106-107-109
+Leave 62 with ancestors:->>>-63-65-103-104-105-106-107-109
+Leave 64 with ancestors:->>>-65-103-104-105-106-107-109
+Leave 66 with ancestors:->>>-68-102-103-104-105-106-107-109
+Leave 67 with ancestors:->>>-68-102-103-104-105-106-107-109
+Leave 69 with ancestors:->>>-71-79-83-101-102-103-104-105-106-107-109
+Leave 70 with ancestors:->>>-71-79-83-101-102-103-104-105-106-107-109
+Leave 72 with ancestors:->>>-74-76-78-79-83-101-102-103-104-105-106-107-109
+Leave 73 with ancestors:->>>-74-76-78-79-83-101-102-103-104-105-106-107-109
+Leave 75 with ancestors:->>>-76-78-79-83-101-102-103-104-105-106-107-109
+Leave 77 with ancestors:->>>-78-79-83-101-102-103-104-105-106-107-109
+Leave 80 with ancestors:->>>-82-83-101-102-103-104-105-106-107-109
+Leave 81 with ancestors:->>>-82-83-101-102-103-104-105-106-107-109
+Leave 84 with ancestors:->>>-100-101-102-103-104-105-106-107-109
+Leave 85 with ancestors:->>>-99-100-101-102-103-104-105-106-107-109
+Leave 86 with ancestors:->>>-88-98-99-100-101-102-103-104-105-106-107-109
+Leave 87 with ancestors:->>>-88-98-99-100-101-102-103-104-105-106-107-109
+Leave 89 with ancestors:->>>-97-98-99-100-101-102-103-104-105-106-107-109
+Leave 90 with ancestors:->>>-92-96-97-98-99-100-101-102-103-104-105-106-107-109
+Leave 91 with ancestors:->>>-92-96-97-98-99-100-101-102-103-104-105-106-107-109
+Leave 93 with ancestors:->>>-95-96-97-98-99-100-101-102-103-104-105-106-107-109
+Leave 94 with ancestors:->>>-95-96-97-98-99-100-101-102-103-104-105-106-107-109
+Leave 108 with ancestors:->>>-109
+numNodos:--->>>110
+false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - false - ROOT::: 109
+NUM HOJAS::: 56
+
+-----------------------End Tree Heuristic----------------------
+Nº de nodos en el albol:------54
+Nº de nodos internos arbol:---54
+Nº de nodos hojas
+Total Parsimony: ->->-> 173323parsNodes original
+(Id: 0, parsimony: 224)-(Id: 1, parsimony: 1124)-(Id: 2, parsimony: 6587)-(Id: 3, parsimony: 7184)-(Id: 4, parsimony: 3971)-(Id: 5, parsimony: 305)-(Id: 6, parsimony: 7236)-(Id: 7, parsimony: 25)-(Id: 8, parsimony: 7386)-(Id: 9, parsimony: 1328)-(Id: 10, parsimony: 535)-(Id: 11, parsimony: 2302)-(Id: 12, parsimony: 2352)-(Id: 13, parsimony: 186)-(Id: 14, parsimony: 12)-(Id: 15, parsimony: 66)-(Id: 16, parsimony: 11)-(Id: 17, parsimony: 103)-(Id: 18, parsimony: 1264)-(Id: 19, parsimony: 3396)-(Id: 20, parsimony: 4282)-(Id: 21, parsimony: 4297)-(Id: 22, parsimony: 1597)-(Id: 23, parsimony: 2032)-(Id: 24, parsimony: 1)-(Id: 25, parsimony: 561)-(Id: 26, parsimony: 858)-(Id: 27, parsimony: 8122)-(Id: 28, parsimony: 7914)-(Id: 29, parsimony: 4369)-(Id: 30, parsimony: 7948)-(Id: 31, parsimony: 7808)-(Id: 32, parsimony: 355)-(Id: 33, parsimony: 347)-(Id: 34, parsimony: 7184)-(Id: 35, parsimony: 1475)-(Id: 36, parsimony: 6847)-(Id: 37, parsimony: 1877)-(Id: 38, parsimony: 2766)-(Id: 39, parsimony: 2326)-(Id: 40, parsimony: 1178)-(Id: 41, parsimony: 3928)-(Id: 42, parsimony: 3928)-(Id: 43, parsimony: 2927)-(Id: 44, parsimony: 3790)-(Id: 45, parsimony: 18512)-(Id: 46, parsimony: 3420)-(Id: 47, parsimony: 2293)-(Id: 48, parsimony: 2188)-(Id: 49, parsimony: 1525)-(Id: 50, parsimony: 1380)-(Id: 51, parsimony: 1483)-(Id: 52, parsimony: 4417)-(Id: 53, parsimony: 3791)-Final parsimony: 173323
+bestParsimony -1
+ auxParsimony 179773
+bestParsimony 179773
+ auxParsimony 177457
+bestParsimony 177457
+ auxParsimony 177400
+bestParsimony 177400
+ auxParsimony 177089
+bestParsimony 177089
+ auxParsimony 173335
+
+------------------------------------------------------------
+QueryId: 0 insertada en posicion: 53 con parsimonia total de 173335
+Total parsimony 173335
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180918
+bestParsimony 180918
+ auxParsimony 180429
+bestParsimony 180429
+ auxParsimony 177508
+bestParsimony 177508
+ auxParsimony 177462
+bestParsimony 177462
+ auxParsimony 177386
+bestParsimony 177386
+ auxParsimony 177226
+
+------------------------------------------------------------
+QueryId: 1 insertada en posicion: 8 con parsimonia total de 177226
+Total parsimony 177226
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182201
+bestParsimony 182201
+ auxParsimony 181676
+bestParsimony 181676
+ auxParsimony 178910
+bestParsimony 178910
+ auxParsimony 178785
+bestParsimony 178785
+ auxParsimony 178739
+bestParsimony 178739
+ auxParsimony 178661
+bestParsimony 178661
+ auxParsimony 178512
+bestParsimony 178512
+ auxParsimony 178491
+bestParsimony 178491
+ auxParsimony 177715
+
+------------------------------------------------------------
+QueryId: 2 insertada en posicion: 30 con parsimonia total de 177715
+Total parsimony 177715
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183884
+bestParsimony 183884
+ auxParsimony 183216
+bestParsimony 183216
+ auxParsimony 180448
+bestParsimony 180448
+ auxParsimony 180350
+bestParsimony 180350
+ auxParsimony 180236
+bestParsimony 180236
+ auxParsimony 180205
+bestParsimony 180205
+ auxParsimony 180008
+bestParsimony 180008
+ auxParsimony 179880
+bestParsimony 179880
+ auxParsimony 179341
+bestParsimony 179341
+ auxParsimony 178707
+bestParsimony 178707
+ auxParsimony 177800
+bestParsimony 177800
+ auxParsimony 177670
+bestParsimony 177670
+ auxParsimony 177515
+bestParsimony 177515
+ auxParsimony 177412
+
+------------------------------------------------------------
+QueryId: 3 insertada en posicion: 45 con parsimonia total de 177412
+Total parsimony 177412
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181201
+bestParsimony 181201
+ auxParsimony 180693
+bestParsimony 180693
+ auxParsimony 177890
+bestParsimony 177890
+ auxParsimony 177842
+bestParsimony 177842
+ auxParsimony 177698
+bestParsimony 177698
+ auxParsimony 177562
+
+------------------------------------------------------------
+QueryId: 4 insertada en posicion: 8 con parsimonia total de 177562
+Total parsimony 177562
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181182
+bestParsimony 181182
+ auxParsimony 180675
+bestParsimony 180675
+ auxParsimony 177878
+bestParsimony 177878
+ auxParsimony 177835
+bestParsimony 177835
+ auxParsimony 177691
+bestParsimony 177691
+ auxParsimony 177555
+
+------------------------------------------------------------
+QueryId: 5 insertada en posicion: 8 con parsimonia total de 177555
+Total parsimony 177555
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184142
+bestParsimony 184142
+ auxParsimony 183494
+bestParsimony 183494
+ auxParsimony 180693
+bestParsimony 180693
+ auxParsimony 180585
+bestParsimony 180585
+ auxParsimony 180485
+bestParsimony 180485
+ auxParsimony 180458
+bestParsimony 180458
+ auxParsimony 180284
+bestParsimony 180284
+ auxParsimony 180107
+bestParsimony 180107
+ auxParsimony 179654
+bestParsimony 179654
+ auxParsimony 178772
+bestParsimony 178772
+ auxParsimony 177849
+bestParsimony 177849
+ auxParsimony 177701
+bestParsimony 177701
+ auxParsimony 177554
+bestParsimony 177554
+ auxParsimony 177509
+
+------------------------------------------------------------
+QueryId: 6 insertada en posicion: 45 con parsimonia total de 177509
+Total parsimony 177509
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184235
+bestParsimony 184235
+ auxParsimony 183595
+bestParsimony 183595
+ auxParsimony 180803
+bestParsimony 180803
+ auxParsimony 180691
+bestParsimony 180691
+ auxParsimony 180607
+bestParsimony 180607
+ auxParsimony 180565
+bestParsimony 180565
+ auxParsimony 180392
+bestParsimony 180392
+ auxParsimony 180226
+bestParsimony 180226
+ auxParsimony 179785
+bestParsimony 179785
+ auxParsimony 178594
+bestParsimony 178594
+ auxParsimony 177588
+bestParsimony 177588
+ auxParsimony 177481
+bestParsimony 177481
+ auxParsimony 177362
+bestParsimony 177362
+ auxParsimony 177338
+
+------------------------------------------------------------
+QueryId: 7 insertada en posicion: 45 con parsimonia total de 177338
+Total parsimony 177338
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184218
+bestParsimony 184218
+ auxParsimony 183580
+bestParsimony 183580
+ auxParsimony 180787
+bestParsimony 180787
+ auxParsimony 180673
+bestParsimony 180673
+ auxParsimony 180586
+bestParsimony 180586
+ auxParsimony 180551
+bestParsimony 180551
+ auxParsimony 180374
+bestParsimony 180374
+ auxParsimony 180205
+bestParsimony 180205
+ auxParsimony 179769
+bestParsimony 179769
+ auxParsimony 178583
+bestParsimony 178583
+ auxParsimony 177573
+bestParsimony 177573
+ auxParsimony 177461
+bestParsimony 177461
+ auxParsimony 177344
+bestParsimony 177344
+ auxParsimony 177318
+
+------------------------------------------------------------
+QueryId: 8 insertada en posicion: 45 con parsimonia total de 177318
+Total parsimony 177318
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184165
+bestParsimony 184165
+ auxParsimony 183496
+bestParsimony 183496
+ auxParsimony 180728
+bestParsimony 180728
+ auxParsimony 180596
+bestParsimony 180596
+ auxParsimony 180505
+bestParsimony 180505
+ auxParsimony 180465
+bestParsimony 180465
+ auxParsimony 180306
+bestParsimony 180306
+ auxParsimony 180169
+bestParsimony 180169
+ auxParsimony 179710
+bestParsimony 179710
+ auxParsimony 178295
+bestParsimony 178295
+ auxParsimony 177607
+bestParsimony 177607
+ auxParsimony 177366
+bestParsimony 177366
+ auxParsimony 177129
+
+------------------------------------------------------------
+QueryId: 9 insertada en posicion: 43 con parsimonia total de 177129
+Total parsimony 177129
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182286
+bestParsimony 182286
+ auxParsimony 181697
+bestParsimony 181697
+ auxParsimony 178922
+bestParsimony 178922
+ auxParsimony 178707
+bestParsimony 178707
+ auxParsimony 178612
+bestParsimony 178612
+ auxParsimony 178596
+bestParsimony 178596
+ auxParsimony 178382
+bestParsimony 178382
+ auxParsimony 178351
+bestParsimony 178351
+ auxParsimony 177411
+bestParsimony 177411
+ auxParsimony 177338
+
+------------------------------------------------------------
+QueryId: 10 insertada en posicion: 34 con parsimonia total de 177338
+Total parsimony 177338
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182383
+bestParsimony 182383
+ auxParsimony 181778
+bestParsimony 181778
+ auxParsimony 178972
+bestParsimony 178972
+ auxParsimony 178773
+bestParsimony 178773
+ auxParsimony 178669
+bestParsimony 178669
+ auxParsimony 178654
+bestParsimony 178654
+ auxParsimony 178429
+bestParsimony 178429
+ auxParsimony 178404
+bestParsimony 178404
+ auxParsimony 177466
+bestParsimony 177466
+ auxParsimony 177387
+
+------------------------------------------------------------
+QueryId: 11 insertada en posicion: 34 con parsimonia total de 177387
+Total parsimony 177387
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182419
+bestParsimony 182419
+ auxParsimony 181783
+bestParsimony 181783
+ auxParsimony 179098
+bestParsimony 179098
+ auxParsimony 178897
+bestParsimony 178897
+ auxParsimony 178835
+bestParsimony 178835
+ auxParsimony 178614
+bestParsimony 178614
+ auxParsimony 178575
+bestParsimony 178575
+ auxParsimony 177607
+bestParsimony 177607
+ auxParsimony 177602
+
+------------------------------------------------------------
+QueryId: 12 insertada en posicion: 36 con parsimonia total de 177602
+Total parsimony 177602
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182383
+bestParsimony 182383
+ auxParsimony 181777
+bestParsimony 181777
+ auxParsimony 178968
+bestParsimony 178968
+ auxParsimony 178769
+bestParsimony 178769
+ auxParsimony 178667
+bestParsimony 178667
+ auxParsimony 178650
+bestParsimony 178650
+ auxParsimony 178431
+bestParsimony 178431
+ auxParsimony 178398
+bestParsimony 178398
+ auxParsimony 177461
+bestParsimony 177461
+ auxParsimony 177384
+
+------------------------------------------------------------
+QueryId: 13 insertada en posicion: 34 con parsimonia total de 177384
+Total parsimony 177384
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182072
+bestParsimony 182072
+ auxParsimony 181521
+bestParsimony 181521
+ auxParsimony 178698
+bestParsimony 178698
+ auxParsimony 178577
+bestParsimony 178577
+ auxParsimony 178442
+bestParsimony 178442
+ auxParsimony 178221
+
+------------------------------------------------------------
+QueryId: 14 insertada en posicion: 27 con parsimonia total de 178221
+Total parsimony 178221
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182077
+bestParsimony 182077
+ auxParsimony 181581
+bestParsimony 181581
+ auxParsimony 178811
+bestParsimony 178811
+ auxParsimony 178631
+bestParsimony 178631
+ auxParsimony 178551
+bestParsimony 178551
+ auxParsimony 178525
+bestParsimony 178525
+ auxParsimony 178283
+bestParsimony 178283
+ auxParsimony 178249
+bestParsimony 178249
+ auxParsimony 177352
+bestParsimony 177352
+ auxParsimony 177291
+
+------------------------------------------------------------
+QueryId: 15 insertada en posicion: 34 con parsimonia total de 177291
+Total parsimony 177291
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184146
+bestParsimony 184146
+ auxParsimony 183542
+bestParsimony 183542
+ auxParsimony 180810
+bestParsimony 180810
+ auxParsimony 180709
+bestParsimony 180709
+ auxParsimony 180598
+bestParsimony 180598
+ auxParsimony 180547
+bestParsimony 180547
+ auxParsimony 180371
+bestParsimony 180371
+ auxParsimony 180258
+bestParsimony 180258
+ auxParsimony 179782
+bestParsimony 179782
+ auxParsimony 178904
+bestParsimony 178904
+ auxParsimony 178001
+bestParsimony 178001
+ auxParsimony 177838
+bestParsimony 177838
+ auxParsimony 177730
+bestParsimony 177730
+ auxParsimony 177597
+
+------------------------------------------------------------
+QueryId: 16 insertada en posicion: 45 con parsimonia total de 177597
+Total parsimony 177597
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184052
+bestParsimony 184052
+ auxParsimony 183377
+bestParsimony 183377
+ auxParsimony 180628
+bestParsimony 180628
+ auxParsimony 180486
+bestParsimony 180486
+ auxParsimony 180420
+bestParsimony 180420
+ auxParsimony 180381
+bestParsimony 180381
+ auxParsimony 180206
+bestParsimony 180206
+ auxParsimony 180069
+bestParsimony 180069
+ auxParsimony 179583
+bestParsimony 179583
+ auxParsimony 178273
+bestParsimony 178273
+ auxParsimony 177370
+bestParsimony 177370
+ auxParsimony 177161
+bestParsimony 177161
+ auxParsimony 177033
+
+------------------------------------------------------------
+QueryId: 17 insertada en posicion: 43 con parsimonia total de 177033
+Total parsimony 177033
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184120
+bestParsimony 184120
+ auxParsimony 183440
+bestParsimony 183440
+ auxParsimony 180678
+bestParsimony 180678
+ auxParsimony 180537
+bestParsimony 180537
+ auxParsimony 180470
+bestParsimony 180470
+ auxParsimony 180428
+bestParsimony 180428
+ auxParsimony 180248
+bestParsimony 180248
+ auxParsimony 180122
+bestParsimony 180122
+ auxParsimony 179626
+bestParsimony 179626
+ auxParsimony 178312
+bestParsimony 178312
+ auxParsimony 177408
+bestParsimony 177408
+ auxParsimony 177198
+bestParsimony 177198
+ auxParsimony 177070
+
+------------------------------------------------------------
+QueryId: 18 insertada en posicion: 43 con parsimonia total de 177070
+Total parsimony 177070
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183978
+bestParsimony 183978
+ auxParsimony 183365
+bestParsimony 183365
+ auxParsimony 180604
+bestParsimony 180604
+ auxParsimony 180499
+bestParsimony 180499
+ auxParsimony 180402
+bestParsimony 180402
+ auxParsimony 180240
+bestParsimony 180240
+ auxParsimony 180188
+bestParsimony 180188
+ auxParsimony 179484
+
+------------------------------------------------------------
+QueryId: 19 insertada en posicion: 30 con parsimonia total de 179484
+Total parsimony 179484
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184093
+bestParsimony 184093
+ auxParsimony 183469
+bestParsimony 183469
+ auxParsimony 180673
+bestParsimony 180673
+ auxParsimony 180540
+bestParsimony 180540
+ auxParsimony 180494
+bestParsimony 180494
+ auxParsimony 180481
+bestParsimony 180481
+ auxParsimony 180212
+bestParsimony 180212
+ auxParsimony 180142
+bestParsimony 180142
+ auxParsimony 179611
+bestParsimony 179611
+ auxParsimony 178190
+bestParsimony 178190
+ auxParsimony 177279
+bestParsimony 177279
+ auxParsimony 177155
+bestParsimony 177155
+ auxParsimony 176977
+
+------------------------------------------------------------
+QueryId: 20 insertada en posicion: 43 con parsimonia total de 176977
+Total parsimony 176977
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184198
+bestParsimony 184198
+ auxParsimony 183556
+bestParsimony 183556
+ auxParsimony 180769
+bestParsimony 180769
+ auxParsimony 180626
+bestParsimony 180626
+ auxParsimony 180520
+bestParsimony 180520
+ auxParsimony 180279
+bestParsimony 180279
+ auxParsimony 180203
+bestParsimony 180203
+ auxParsimony 179698
+bestParsimony 179698
+ auxParsimony 178410
+bestParsimony 178410
+ auxParsimony 177242
+bestParsimony 177242
+ auxParsimony 177176
+
+------------------------------------------------------------
+QueryId: 21 insertada en posicion: 43 con parsimonia total de 177176
+Total parsimony 177176
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184203
+bestParsimony 184203
+ auxParsimony 183557
+bestParsimony 183557
+ auxParsimony 180772
+bestParsimony 180772
+ auxParsimony 180627
+bestParsimony 180627
+ auxParsimony 180521
+bestParsimony 180521
+ auxParsimony 180280
+bestParsimony 180280
+ auxParsimony 180203
+bestParsimony 180203
+ auxParsimony 179698
+bestParsimony 179698
+ auxParsimony 178416
+bestParsimony 178416
+ auxParsimony 177245
+bestParsimony 177245
+ auxParsimony 177180
+
+------------------------------------------------------------
+QueryId: 22 insertada en posicion: 43 con parsimonia total de 177180
+Total parsimony 177180
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184060
+bestParsimony 184060
+ auxParsimony 183422
+bestParsimony 183422
+ auxParsimony 180657
+bestParsimony 180657
+ auxParsimony 180479
+bestParsimony 180479
+ auxParsimony 180408
+bestParsimony 180408
+ auxParsimony 180362
+bestParsimony 180362
+ auxParsimony 180166
+bestParsimony 180166
+ auxParsimony 180068
+bestParsimony 180068
+ auxParsimony 179613
+bestParsimony 179613
+ auxParsimony 178600
+bestParsimony 178600
+ auxParsimony 178579
+bestParsimony 178579
+ auxParsimony 177455
+bestParsimony 177455
+ auxParsimony 177288
+bestParsimony 177288
+ auxParsimony 177263
+bestParsimony 177263
+ auxParsimony 177241
+
+------------------------------------------------------------
+QueryId: 23 insertada en posicion: 45 con parsimonia total de 177241
+Total parsimony 177241
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184111
+bestParsimony 184111
+ auxParsimony 183490
+bestParsimony 183490
+ auxParsimony 180690
+bestParsimony 180690
+ auxParsimony 180563
+bestParsimony 180563
+ auxParsimony 180509
+bestParsimony 180509
+ auxParsimony 180500
+bestParsimony 180500
+ auxParsimony 180227
+bestParsimony 180227
+ auxParsimony 180159
+bestParsimony 180159
+ auxParsimony 179626
+bestParsimony 179626
+ auxParsimony 178188
+bestParsimony 178188
+ auxParsimony 177297
+bestParsimony 177297
+ auxParsimony 177194
+bestParsimony 177194
+ auxParsimony 176998
+
+------------------------------------------------------------
+QueryId: 24 insertada en posicion: 43 con parsimonia total de 176998
+Total parsimony 176998
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180831
+bestParsimony 180831
+ auxParsimony 180112
+bestParsimony 180112
+ auxParsimony 177301
+bestParsimony 177301
+ auxParsimony 175904
+
+------------------------------------------------------------
+QueryId: 25 insertada en posicion: 3 con parsimonia total de 175904
+Total parsimony 175904
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180840
+bestParsimony 180840
+ auxParsimony 180087
+bestParsimony 180087
+ auxParsimony 177288
+bestParsimony 177288
+ auxParsimony 175879
+
+------------------------------------------------------------
+QueryId: 26 insertada en posicion: 3 con parsimonia total de 175879
+Total parsimony 175879
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180855
+bestParsimony 180855
+ auxParsimony 180281
+bestParsimony 180281
+ auxParsimony 177380
+bestParsimony 177380
+ auxParsimony 177248
+bestParsimony 177248
+ auxParsimony 176955
+
+------------------------------------------------------------
+QueryId: 27 insertada en posicion: 6 con parsimonia total de 176955
+Total parsimony 176955
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184156
+bestParsimony 184156
+ auxParsimony 183501
+bestParsimony 183501
+ auxParsimony 180714
+bestParsimony 180714
+ auxParsimony 180569
+bestParsimony 180569
+ auxParsimony 180451
+bestParsimony 180451
+ auxParsimony 180444
+bestParsimony 180444
+ auxParsimony 180305
+bestParsimony 180305
+ auxParsimony 180137
+bestParsimony 180137
+ auxParsimony 179625
+bestParsimony 179625
+ auxParsimony 178178
+bestParsimony 178178
+ auxParsimony 177389
+bestParsimony 177389
+ auxParsimony 177126
+bestParsimony 177126
+ auxParsimony 176977
+
+------------------------------------------------------------
+QueryId: 28 insertada en posicion: 43 con parsimonia total de 176977
+Total parsimony 176977
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184155
+bestParsimony 184155
+ auxParsimony 183499
+bestParsimony 183499
+ auxParsimony 180711
+bestParsimony 180711
+ auxParsimony 180568
+bestParsimony 180568
+ auxParsimony 180448
+bestParsimony 180448
+ auxParsimony 180440
+bestParsimony 180440
+ auxParsimony 180301
+bestParsimony 180301
+ auxParsimony 180134
+bestParsimony 180134
+ auxParsimony 179623
+bestParsimony 179623
+ auxParsimony 178176
+bestParsimony 178176
+ auxParsimony 177384
+bestParsimony 177384
+ auxParsimony 177123
+bestParsimony 177123
+ auxParsimony 176973
+
+------------------------------------------------------------
+QueryId: 29 insertada en posicion: 43 con parsimonia total de 176973
+Total parsimony 176973
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180564
+bestParsimony 180564
+ auxParsimony 180048
+bestParsimony 180048
+ auxParsimony 177191
+bestParsimony 177191
+ auxParsimony 177135
+bestParsimony 177135
+ auxParsimony 177051
+
+------------------------------------------------------------
+QueryId: 30 insertada en posicion: 8 con parsimonia total de 177051
+Total parsimony 177051
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180584
+bestParsimony 180584
+ auxParsimony 180056
+bestParsimony 180056
+ auxParsimony 177189
+bestParsimony 177189
+ auxParsimony 177149
+bestParsimony 177149
+ auxParsimony 177052
+
+------------------------------------------------------------
+QueryId: 31 insertada en posicion: 8 con parsimonia total de 177052
+Total parsimony 177052
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180573
+bestParsimony 180573
+ auxParsimony 180233
+bestParsimony 180233
+ auxParsimony 177256
+bestParsimony 177256
+ auxParsimony 177254
+bestParsimony 177254
+ auxParsimony 176817
+
+------------------------------------------------------------
+QueryId: 32 insertada en posicion: 6 con parsimonia total de 176817
+Total parsimony 176817
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180732
+bestParsimony 180732
+ auxParsimony 180335
+bestParsimony 180335
+ auxParsimony 177230
+bestParsimony 177230
+ auxParsimony 176573
+
+------------------------------------------------------------
+QueryId: 33 insertada en posicion: 6 con parsimonia total de 176573
+Total parsimony 176573
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180793
+bestParsimony 180793
+ auxParsimony 180214
+bestParsimony 180214
+ auxParsimony 177284
+bestParsimony 177284
+ auxParsimony 177082
+
+------------------------------------------------------------
+QueryId: 34 insertada en posicion: 6 con parsimonia total de 177082
+Total parsimony 177082
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180725
+bestParsimony 180725
+ auxParsimony 180319
+bestParsimony 180319
+ auxParsimony 177254
+bestParsimony 177254
+ auxParsimony 177189
+bestParsimony 177189
+ auxParsimony 176569
+
+------------------------------------------------------------
+QueryId: 35 insertada en posicion: 6 con parsimonia total de 176569
+Total parsimony 176569
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180813
+bestParsimony 180813
+ auxParsimony 180226
+bestParsimony 180226
+ auxParsimony 177303
+bestParsimony 177303
+ auxParsimony 177101
+
+------------------------------------------------------------
+QueryId: 36 insertada en posicion: 6 con parsimonia total de 177101
+Total parsimony 177101
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180662
+bestParsimony 180662
+ auxParsimony 180125
+bestParsimony 180125
+ auxParsimony 177080
+bestParsimony 177080
+ auxParsimony 176432
+
+------------------------------------------------------------
+QueryId: 37 insertada en posicion: 6 con parsimonia total de 176432
+Total parsimony 176432
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180725
+bestParsimony 180725
+ auxParsimony 180318
+bestParsimony 180318
+ auxParsimony 177253
+bestParsimony 177253
+ auxParsimony 177188
+bestParsimony 177188
+ auxParsimony 176568
+
+------------------------------------------------------------
+QueryId: 38 insertada en posicion: 6 con parsimonia total de 176568
+Total parsimony 176568
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184083
+bestParsimony 184083
+ auxParsimony 183547
+bestParsimony 183547
+ auxParsimony 180766
+bestParsimony 180766
+ auxParsimony 180571
+bestParsimony 180571
+ auxParsimony 180527
+bestParsimony 180527
+ auxParsimony 180492
+bestParsimony 180492
+ auxParsimony 180316
+bestParsimony 180316
+ auxParsimony 180150
+bestParsimony 180150
+ auxParsimony 179651
+bestParsimony 179651
+ auxParsimony 178506
+bestParsimony 178506
+ auxParsimony 178448
+bestParsimony 178448
+ auxParsimony 177319
+bestParsimony 177319
+ auxParsimony 177200
+
+------------------------------------------------------------
+QueryId: 39 insertada en posicion: 42 con parsimonia total de 177200
+Total parsimony 177200
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184120
+bestParsimony 184120
+ auxParsimony 183572
+bestParsimony 183572
+ auxParsimony 180783
+bestParsimony 180783
+ auxParsimony 180589
+bestParsimony 180589
+ auxParsimony 180544
+bestParsimony 180544
+ auxParsimony 180514
+bestParsimony 180514
+ auxParsimony 180335
+bestParsimony 180335
+ auxParsimony 180165
+bestParsimony 180165
+ auxParsimony 179667
+bestParsimony 179667
+ auxParsimony 178523
+bestParsimony 178523
+ auxParsimony 178457
+bestParsimony 178457
+ auxParsimony 177330
+bestParsimony 177330
+ auxParsimony 177212
+
+------------------------------------------------------------
+QueryId: 40 insertada en posicion: 42 con parsimonia total de 177212
+Total parsimony 177212
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184172
+bestParsimony 184172
+ auxParsimony 183513
+bestParsimony 183513
+ auxParsimony 180734
+bestParsimony 180734
+ auxParsimony 180598
+bestParsimony 180598
+ auxParsimony 180538
+bestParsimony 180538
+ auxParsimony 180517
+bestParsimony 180517
+ auxParsimony 180290
+bestParsimony 180290
+ auxParsimony 180268
+bestParsimony 180268
+ auxParsimony 179706
+bestParsimony 179706
+ auxParsimony 178067
+bestParsimony 178067
+ auxParsimony 177569
+bestParsimony 177569
+ auxParsimony 177299
+bestParsimony 177299
+ auxParsimony 176990
+
+------------------------------------------------------------
+QueryId: 41 insertada en posicion: 43 con parsimonia total de 176990
+Total parsimony 176990
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183594
+bestParsimony 183594
+ auxParsimony 182965
+bestParsimony 182965
+ auxParsimony 180195
+bestParsimony 180195
+ auxParsimony 180071
+bestParsimony 180071
+ auxParsimony 180064
+bestParsimony 180064
+ auxParsimony 179881
+bestParsimony 179881
+ auxParsimony 179850
+bestParsimony 179850
+ auxParsimony 179327
+
+------------------------------------------------------------
+QueryId: 42 insertada en posicion: 30 con parsimonia total de 179327
+Total parsimony 179327
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183623
+bestParsimony 183623
+ auxParsimony 182995
+bestParsimony 182995
+ auxParsimony 180222
+bestParsimony 180222
+ auxParsimony 180096
+bestParsimony 180096
+ auxParsimony 180082
+bestParsimony 180082
+ auxParsimony 179901
+bestParsimony 179901
+ auxParsimony 179876
+bestParsimony 179876
+ auxParsimony 179347
+
+------------------------------------------------------------
+QueryId: 43 insertada en posicion: 30 con parsimonia total de 179347
+Total parsimony 179347
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183618
+bestParsimony 183618
+ auxParsimony 182987
+bestParsimony 182987
+ auxParsimony 180214
+bestParsimony 180214
+ auxParsimony 180091
+bestParsimony 180091
+ auxParsimony 180073
+bestParsimony 180073
+ auxParsimony 179895
+bestParsimony 179895
+ auxParsimony 179865
+bestParsimony 179865
+ auxParsimony 179342
+
+------------------------------------------------------------
+QueryId: 44 insertada en posicion: 30 con parsimonia total de 179342
+Total parsimony 179342
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180973
+bestParsimony 180973
+ auxParsimony 180395
+bestParsimony 180395
+ auxParsimony 177526
+bestParsimony 177526
+ auxParsimony 177455
+bestParsimony 177455
+ auxParsimony 176716
+
+------------------------------------------------------------
+QueryId: 45 insertada en posicion: 8 con parsimonia total de 176716
+Total parsimony 176716
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180981
+bestParsimony 180981
+ auxParsimony 180400
+bestParsimony 180400
+ auxParsimony 177537
+bestParsimony 177537
+ auxParsimony 177466
+bestParsimony 177466
+ auxParsimony 176727
+
+------------------------------------------------------------
+QueryId: 46 insertada en posicion: 8 con parsimonia total de 176727
+Total parsimony 176727
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180794
+bestParsimony 180794
+ auxParsimony 180482
+bestParsimony 180482
+ auxParsimony 177631
+bestParsimony 177631
+ auxParsimony 177593
+bestParsimony 177593
+ auxParsimony 177529
+bestParsimony 177529
+ auxParsimony 176822
+
+------------------------------------------------------------
+QueryId: 47 insertada en posicion: 8 con parsimonia total de 176822
+Total parsimony 176822
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181167
+bestParsimony 181167
+ auxParsimony 180568
+bestParsimony 180568
+ auxParsimony 177741
+bestParsimony 177741
+ auxParsimony 177720
+bestParsimony 177720
+ auxParsimony 177544
+bestParsimony 177544
+ auxParsimony 177422
+
+------------------------------------------------------------
+QueryId: 48 insertada en posicion: 8 con parsimonia total de 177422
+Total parsimony 177422
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182266
+bestParsimony 182266
+ auxParsimony 181703
+bestParsimony 181703
+ auxParsimony 178903
+bestParsimony 178903
+ auxParsimony 178814
+bestParsimony 178814
+ auxParsimony 178627
+bestParsimony 178627
+ auxParsimony 178607
+bestParsimony 178607
+ auxParsimony 178461
+bestParsimony 178461
+ auxParsimony 178349
+bestParsimony 178349
+ auxParsimony 177400
+
+------------------------------------------------------------
+QueryId: 49 insertada en posicion: 31 con parsimonia total de 177400
+Total parsimony 177400
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 178294
+bestParsimony 178294
+ auxParsimony 176963
+bestParsimony 176963
+ auxParsimony 176095
+
+------------------------------------------------------------
+QueryId: 50 insertada en posicion: 52 con parsimonia total de 176095
+Total parsimony 176095
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181033
+bestParsimony 181033
+ auxParsimony 180449
+bestParsimony 180449
+ auxParsimony 177668
+bestParsimony 177668
+ auxParsimony 177645
+bestParsimony 177645
+ auxParsimony 177475
+bestParsimony 177475
+ auxParsimony 177357
+
+------------------------------------------------------------
+QueryId: 51 insertada en posicion: 8 con parsimonia total de 177357
+Total parsimony 177357
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182264
+bestParsimony 182264
+ auxParsimony 181705
+bestParsimony 181705
+ auxParsimony 178904
+bestParsimony 178904
+ auxParsimony 178817
+bestParsimony 178817
+ auxParsimony 178627
+bestParsimony 178627
+ auxParsimony 178607
+bestParsimony 178607
+ auxParsimony 178462
+bestParsimony 178462
+ auxParsimony 178351
+bestParsimony 178351
+ auxParsimony 177400
+
+------------------------------------------------------------
+QueryId: 52 insertada en posicion: 31 con parsimonia total de 177400
+Total parsimony 177400
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181001
+bestParsimony 181001
+ auxParsimony 180460
+bestParsimony 180460
+ auxParsimony 177594
+bestParsimony 177594
+ auxParsimony 177577
+bestParsimony 177577
+ auxParsimony 177494
+bestParsimony 177494
+ auxParsimony 176777
+
+------------------------------------------------------------
+QueryId: 53 insertada en posicion: 8 con parsimonia total de 176777
+Total parsimony 176777
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181770
+bestParsimony 181770
+ auxParsimony 181181
+bestParsimony 181181
+ auxParsimony 178349
+bestParsimony 178349
+ auxParsimony 178306
+bestParsimony 178306
+ auxParsimony 178184
+bestParsimony 178184
+ auxParsimony 178153
+bestParsimony 178153
+ auxParsimony 174516
+bestParsimony 174516
+ auxParsimony 174291
+bestParsimony 174291
+ auxParsimony 173860
+
+------------------------------------------------------------
+QueryId: 54 insertada en posicion: 27 con parsimonia total de 173860
+Total parsimony 173860
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184188
+bestParsimony 184188
+ auxParsimony 183462
+bestParsimony 183462
+ auxParsimony 180730
+bestParsimony 180730
+ auxParsimony 180580
+bestParsimony 180580
+ auxParsimony 180542
+bestParsimony 180542
+ auxParsimony 180520
+bestParsimony 180520
+ auxParsimony 180303
+bestParsimony 180303
+ auxParsimony 180197
+bestParsimony 180197
+ auxParsimony 179668
+bestParsimony 179668
+ auxParsimony 177856
+bestParsimony 177856
+ auxParsimony 177656
+bestParsimony 177656
+ auxParsimony 177391
+bestParsimony 177391
+ auxParsimony 176966
+
+------------------------------------------------------------
+QueryId: 55 insertada en posicion: 43 con parsimonia total de 176966
+Total parsimony 176966
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184171
+bestParsimony 184171
+ auxParsimony 183505
+bestParsimony 183505
+ auxParsimony 180726
+bestParsimony 180726
+ auxParsimony 180593
+bestParsimony 180593
+ auxParsimony 180548
+bestParsimony 180548
+ auxParsimony 180491
+bestParsimony 180491
+ auxParsimony 180247
+bestParsimony 180247
+ auxParsimony 180181
+bestParsimony 180181
+ auxParsimony 179719
+bestParsimony 179719
+ auxParsimony 178247
+bestParsimony 178247
+ auxParsimony 177450
+bestParsimony 177450
+ auxParsimony 176845
+
+------------------------------------------------------------
+QueryId: 56 insertada en posicion: 42 con parsimonia total de 176845
+Total parsimony 176845
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181701
+bestParsimony 181701
+ auxParsimony 181391
+bestParsimony 181391
+ auxParsimony 178474
+bestParsimony 178474
+ auxParsimony 178408
+bestParsimony 178408
+ auxParsimony 178382
+bestParsimony 178382
+ auxParsimony 178156
+bestParsimony 178156
+ auxParsimony 177828
+bestParsimony 177828
+ auxParsimony 174773
+bestParsimony 174773
+ auxParsimony 174764
+bestParsimony 174764
+ auxParsimony 174685
+bestParsimony 174685
+ auxParsimony 174645
+bestParsimony 174645
+ auxParsimony 174095
+
+------------------------------------------------------------
+QueryId: 57 insertada en posicion: 18 con parsimonia total de 174095
+Total parsimony 174095
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181694
+bestParsimony 181694
+ auxParsimony 181384
+bestParsimony 181384
+ auxParsimony 178463
+bestParsimony 178463
+ auxParsimony 178395
+bestParsimony 178395
+ auxParsimony 178374
+bestParsimony 178374
+ auxParsimony 178144
+bestParsimony 178144
+ auxParsimony 177808
+bestParsimony 177808
+ auxParsimony 174756
+bestParsimony 174756
+ auxParsimony 174746
+bestParsimony 174746
+ auxParsimony 174662
+bestParsimony 174662
+ auxParsimony 174622
+bestParsimony 174622
+ auxParsimony 174076
+
+------------------------------------------------------------
+QueryId: 58 insertada en posicion: 18 con parsimonia total de 174076
+Total parsimony 174076
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184068
+bestParsimony 184068
+ auxParsimony 183384
+bestParsimony 183384
+ auxParsimony 180634
+bestParsimony 180634
+ auxParsimony 180535
+bestParsimony 180535
+ auxParsimony 180424
+bestParsimony 180424
+ auxParsimony 180198
+bestParsimony 180198
+ auxParsimony 180133
+bestParsimony 180133
+ auxParsimony 179661
+bestParsimony 179661
+ auxParsimony 178145
+bestParsimony 178145
+ auxParsimony 177453
+bestParsimony 177453
+ auxParsimony 176138
+
+------------------------------------------------------------
+QueryId: 59 insertada en posicion: 42 con parsimonia total de 176138
+Total parsimony 176138
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182049
+bestParsimony 182049
+ auxParsimony 181542
+bestParsimony 181542
+ auxParsimony 178771
+bestParsimony 178771
+ auxParsimony 178589
+bestParsimony 178589
+ auxParsimony 178412
+bestParsimony 178412
+ auxParsimony 178199
+bestParsimony 178199
+ auxParsimony 178146
+bestParsimony 178146
+ auxParsimony 177364
+bestParsimony 177364
+ auxParsimony 177110
+
+------------------------------------------------------------
+QueryId: 60 insertada en posicion: 34 con parsimonia total de 177110
+Total parsimony 177110
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184102
+bestParsimony 184102
+ auxParsimony 183411
+bestParsimony 183411
+ auxParsimony 180671
+bestParsimony 180671
+ auxParsimony 180584
+bestParsimony 180584
+ auxParsimony 180483
+bestParsimony 180483
+ auxParsimony 180472
+bestParsimony 180472
+ auxParsimony 180264
+bestParsimony 180264
+ auxParsimony 180137
+bestParsimony 180137
+ auxParsimony 179691
+bestParsimony 179691
+ auxParsimony 178349
+bestParsimony 178349
+ auxParsimony 177412
+bestParsimony 177412
+ auxParsimony 175525
+
+------------------------------------------------------------
+QueryId: 61 insertada en posicion: 42 con parsimonia total de 175525
+Total parsimony 175525
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182136
+bestParsimony 182136
+ auxParsimony 181488
+bestParsimony 181488
+ auxParsimony 178777
+bestParsimony 178777
+ auxParsimony 178626
+bestParsimony 178626
+ auxParsimony 178509
+bestParsimony 178509
+ auxParsimony 178483
+bestParsimony 178483
+ auxParsimony 178242
+bestParsimony 178242
+ auxParsimony 178220
+bestParsimony 178220
+ auxParsimony 177380
+bestParsimony 177380
+ auxParsimony 177283
+
+------------------------------------------------------------
+QueryId: 62 insertada en posicion: 34 con parsimonia total de 177283
+Total parsimony 177283
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 177743
+bestParsimony 177743
+ auxParsimony 176965
+bestParsimony 176965
+ auxParsimony 175797
+
+------------------------------------------------------------
+QueryId: 63 insertada en posicion: 52 con parsimonia total de 175797
+Total parsimony 175797
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 177562
+bestParsimony 177562
+ auxParsimony 176934
+bestParsimony 176934
+ auxParsimony 175690
+
+------------------------------------------------------------
+QueryId: 64 insertada en posicion: 52 con parsimonia total de 175690
+Total parsimony 175690
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 177936
+bestParsimony 177936
+ auxParsimony 176959
+bestParsimony 176959
+ auxParsimony 175885
+
+------------------------------------------------------------
+QueryId: 65 insertada en posicion: 52 con parsimonia total de 175885
+Total parsimony 175885
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181167
+bestParsimony 181167
+ auxParsimony 180538
+bestParsimony 180538
+ auxParsimony 177738
+bestParsimony 177738
+ auxParsimony 177646
+bestParsimony 177646
+ auxParsimony 177613
+bestParsimony 177613
+ auxParsimony 177530
+bestParsimony 177530
+ auxParsimony 177463
+bestParsimony 177463
+ auxParsimony 177453
+
+------------------------------------------------------------
+QueryId: 66 insertada en posicion: 28 con parsimonia total de 177453
+Total parsimony 177453
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184125
+bestParsimony 184125
+ auxParsimony 183493
+bestParsimony 183493
+ auxParsimony 180736
+bestParsimony 180736
+ auxParsimony 180619
+bestParsimony 180619
+ auxParsimony 180510
+bestParsimony 180510
+ auxParsimony 180505
+bestParsimony 180505
+ auxParsimony 180310
+bestParsimony 180310
+ auxParsimony 180121
+bestParsimony 180121
+ auxParsimony 179654
+bestParsimony 179654
+ auxParsimony 178196
+bestParsimony 178196
+ auxParsimony 174819
+
+------------------------------------------------------------
+QueryId: 67 insertada en posicion: 39 con parsimonia total de 174819
+Total parsimony 174819
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184103
+bestParsimony 184103
+ auxParsimony 183467
+bestParsimony 183467
+ auxParsimony 180722
+bestParsimony 180722
+ auxParsimony 180598
+bestParsimony 180598
+ auxParsimony 180500
+bestParsimony 180500
+ auxParsimony 180491
+bestParsimony 180491
+ auxParsimony 180295
+bestParsimony 180295
+ auxParsimony 180110
+bestParsimony 180110
+ auxParsimony 179643
+bestParsimony 179643
+ auxParsimony 178190
+bestParsimony 178190
+ auxParsimony 174827
+
+------------------------------------------------------------
+QueryId: 68 insertada en posicion: 39 con parsimonia total de 174827
+Total parsimony 174827
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182272
+bestParsimony 182272
+ auxParsimony 181628
+bestParsimony 181628
+ auxParsimony 178815
+bestParsimony 178815
+ auxParsimony 178717
+bestParsimony 178717
+ auxParsimony 178584
+bestParsimony 178584
+ auxParsimony 178462
+bestParsimony 178462
+ auxParsimony 178390
+bestParsimony 178390
+ auxParsimony 177307
+
+------------------------------------------------------------
+QueryId: 69 insertada en posicion: 31 con parsimonia total de 177307
+Total parsimony 177307
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182281
+bestParsimony 182281
+ auxParsimony 181634
+bestParsimony 181634
+ auxParsimony 178820
+bestParsimony 178820
+ auxParsimony 178723
+bestParsimony 178723
+ auxParsimony 178589
+bestParsimony 178589
+ auxParsimony 178466
+bestParsimony 178466
+ auxParsimony 178397
+bestParsimony 178397
+ auxParsimony 177310
+
+------------------------------------------------------------
+QueryId: 70 insertada en posicion: 31 con parsimonia total de 177310
+Total parsimony 177310
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182275
+bestParsimony 182275
+ auxParsimony 181627
+bestParsimony 181627
+ auxParsimony 178815
+bestParsimony 178815
+ auxParsimony 178719
+bestParsimony 178719
+ auxParsimony 178583
+bestParsimony 178583
+ auxParsimony 178464
+bestParsimony 178464
+ auxParsimony 178393
+bestParsimony 178393
+ auxParsimony 177305
+
+------------------------------------------------------------
+QueryId: 71 insertada en posicion: 31 con parsimonia total de 177305
+Total parsimony 177305
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182304
+bestParsimony 182304
+ auxParsimony 181741
+bestParsimony 181741
+ auxParsimony 178972
+bestParsimony 178972
+ auxParsimony 178874
+bestParsimony 178874
+ auxParsimony 178719
+bestParsimony 178719
+ auxParsimony 178684
+bestParsimony 178684
+ auxParsimony 178524
+bestParsimony 178524
+ auxParsimony 178420
+bestParsimony 178420
+ auxParsimony 177501
+
+------------------------------------------------------------
+QueryId: 72 insertada en posicion: 31 con parsimonia total de 177501
+Total parsimony 177501
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182342
+bestParsimony 182342
+ auxParsimony 181781
+bestParsimony 181781
+ auxParsimony 179004
+bestParsimony 179004
+ auxParsimony 178902
+bestParsimony 178902
+ auxParsimony 178753
+bestParsimony 178753
+ auxParsimony 178711
+bestParsimony 178711
+ auxParsimony 178555
+bestParsimony 178555
+ auxParsimony 178451
+bestParsimony 178451
+ auxParsimony 177524
+
+------------------------------------------------------------
+QueryId: 73 insertada en posicion: 31 con parsimonia total de 177524
+Total parsimony 177524
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182513
+bestParsimony 182513
+ auxParsimony 181958
+bestParsimony 181958
+ auxParsimony 179188
+bestParsimony 179188
+ auxParsimony 179085
+bestParsimony 179085
+ auxParsimony 178965
+bestParsimony 178965
+ auxParsimony 178904
+bestParsimony 178904
+ auxParsimony 178737
+bestParsimony 178737
+ auxParsimony 178658
+bestParsimony 178658
+ auxParsimony 177680
+
+------------------------------------------------------------
+QueryId: 74 insertada en posicion: 31 con parsimonia total de 177680
+Total parsimony 177680
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182138
+bestParsimony 182138
+ auxParsimony 181639
+bestParsimony 181639
+ auxParsimony 178903
+bestParsimony 178903
+ auxParsimony 178613
+bestParsimony 178613
+ auxParsimony 178562
+bestParsimony 178562
+ auxParsimony 178364
+bestParsimony 178364
+ auxParsimony 177592
+
+------------------------------------------------------------
+QueryId: 75 insertada en posicion: 31 con parsimonia total de 177592
+Total parsimony 177592
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180800
+bestParsimony 180800
+ auxParsimony 180470
+bestParsimony 180470
+ auxParsimony 177631
+bestParsimony 177631
+ auxParsimony 177573
+bestParsimony 177573
+ auxParsimony 177499
+bestParsimony 177499
+ auxParsimony 177234
+
+------------------------------------------------------------
+QueryId: 76 insertada en posicion: 8 con parsimonia total de 177234
+Total parsimony 177234
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181173
+bestParsimony 181173
+ auxParsimony 180504
+bestParsimony 180504
+ auxParsimony 177672
+bestParsimony 177672
+ auxParsimony 177647
+bestParsimony 177647
+ auxParsimony 177581
+bestParsimony 177581
+ auxParsimony 177506
+bestParsimony 177506
+ auxParsimony 177465
+
+------------------------------------------------------------
+QueryId: 77 insertada en posicion: 27 con parsimonia total de 177465
+Total parsimony 177465
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182243
+bestParsimony 182243
+ auxParsimony 181700
+bestParsimony 181700
+ auxParsimony 178898
+bestParsimony 178898
+ auxParsimony 178806
+bestParsimony 178806
+ auxParsimony 178637
+bestParsimony 178637
+ auxParsimony 178398
+bestParsimony 178398
+ auxParsimony 178364
+bestParsimony 178364
+ auxParsimony 177415
+bestParsimony 177415
+ auxParsimony 177272
+
+------------------------------------------------------------
+QueryId: 78 insertada en posicion: 34 con parsimonia total de 177272
+Total parsimony 177272
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182202
+bestParsimony 182202
+ auxParsimony 181660
+bestParsimony 181660
+ auxParsimony 178871
+bestParsimony 178871
+ auxParsimony 178785
+bestParsimony 178785
+ auxParsimony 178615
+bestParsimony 178615
+ auxParsimony 178375
+bestParsimony 178375
+ auxParsimony 178341
+bestParsimony 178341
+ auxParsimony 177396
+bestParsimony 177396
+ auxParsimony 177251
+
+------------------------------------------------------------
+QueryId: 79 insertada en posicion: 34 con parsimonia total de 177251
+Total parsimony 177251
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182161
+bestParsimony 182161
+ auxParsimony 181627
+bestParsimony 181627
+ auxParsimony 178863
+bestParsimony 178863
+ auxParsimony 178760
+bestParsimony 178760
+ auxParsimony 178597
+bestParsimony 178597
+ auxParsimony 178351
+bestParsimony 178351
+ auxParsimony 178325
+bestParsimony 178325
+ auxParsimony 177377
+bestParsimony 177377
+ auxParsimony 177234
+
+------------------------------------------------------------
+QueryId: 80 insertada en posicion: 34 con parsimonia total de 177234
+Total parsimony 177234
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180813
+bestParsimony 180813
+ auxParsimony 180273
+bestParsimony 180273
+ auxParsimony 177356
+bestParsimony 177356
+ auxParsimony 177326
+bestParsimony 177326
+ auxParsimony 177095
+
+------------------------------------------------------------
+QueryId: 81 insertada en posicion: 8 con parsimonia total de 177095
+Total parsimony 177095
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183896
+bestParsimony 183896
+ auxParsimony 183394
+bestParsimony 183394
+ auxParsimony 180680
+bestParsimony 180680
+ auxParsimony 180587
+bestParsimony 180587
+ auxParsimony 180474
+bestParsimony 180474
+ auxParsimony 180450
+bestParsimony 180450
+ auxParsimony 180302
+bestParsimony 180302
+ auxParsimony 180281
+bestParsimony 180281
+ auxParsimony 179802
+
+------------------------------------------------------------
+QueryId: 82 insertada en posicion: 30 con parsimonia total de 179802
+Total parsimony 179802
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 183417
+bestParsimony 183417
+ auxParsimony 182969
+bestParsimony 182969
+ auxParsimony 180351
+bestParsimony 180351
+ auxParsimony 180277
+bestParsimony 180277
+ auxParsimony 180154
+bestParsimony 180154
+ auxParsimony 180141
+bestParsimony 180141
+ auxParsimony 179999
+bestParsimony 179999
+ auxParsimony 179979
+bestParsimony 179979
+ auxParsimony 179541
+
+------------------------------------------------------------
+QueryId: 83 insertada en posicion: 30 con parsimonia total de 179541
+Total parsimony 179541
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 173365
+
+------------------------------------------------------------
+QueryId: 84 insertada en posicion: 0 con parsimonia total de 173365
+Total parsimony 173365
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 173375
+
+------------------------------------------------------------
+QueryId: 85 insertada en posicion: 0 con parsimonia total de 173375
+Total parsimony 173375
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 173388
+
+------------------------------------------------------------
+QueryId: 86 insertada en posicion: 0 con parsimonia total de 173388
+Total parsimony 173388
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 173377
+
+------------------------------------------------------------
+QueryId: 87 insertada en posicion: 0 con parsimonia total de 173377
+Total parsimony 173377
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181111
+bestParsimony 181111
+ auxParsimony 180469
+bestParsimony 180469
+ auxParsimony 177639
+bestParsimony 177639
+ auxParsimony 177592
+bestParsimony 177592
+ auxParsimony 177541
+bestParsimony 177541
+ auxParsimony 177418
+
+------------------------------------------------------------
+QueryId: 88 insertada en posicion: 8 con parsimonia total de 177418
+Total parsimony 177418
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184122
+bestParsimony 184122
+ auxParsimony 183455
+bestParsimony 183455
+ auxParsimony 180705
+bestParsimony 180705
+ auxParsimony 180566
+bestParsimony 180566
+ auxParsimony 180476
+bestParsimony 180476
+ auxParsimony 180434
+bestParsimony 180434
+ auxParsimony 180283
+bestParsimony 180283
+ auxParsimony 180162
+bestParsimony 180162
+ auxParsimony 179685
+bestParsimony 179685
+ auxParsimony 178257
+bestParsimony 178257
+ auxParsimony 177588
+bestParsimony 177588
+ auxParsimony 177331
+bestParsimony 177331
+ auxParsimony 177108
+
+------------------------------------------------------------
+QueryId: 89 insertada en posicion: 43 con parsimonia total de 177108
+Total parsimony 177108
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 184171
+bestParsimony 184171
+ auxParsimony 183494
+bestParsimony 183494
+ auxParsimony 180719
+bestParsimony 180719
+ auxParsimony 180590
+bestParsimony 180590
+ auxParsimony 180501
+bestParsimony 180501
+ auxParsimony 180448
+bestParsimony 180448
+ auxParsimony 180289
+bestParsimony 180289
+ auxParsimony 180175
+bestParsimony 180175
+ auxParsimony 179710
+bestParsimony 179710
+ auxParsimony 178270
+bestParsimony 178270
+ auxParsimony 177597
+bestParsimony 177597
+ auxParsimony 177332
+bestParsimony 177332
+ auxParsimony 177104
+
+------------------------------------------------------------
+QueryId: 90 insertada en posicion: 43 con parsimonia total de 177104
+Total parsimony 177104
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180864
+bestParsimony 180864
+ auxParsimony 180488
+bestParsimony 180488
+ auxParsimony 177675
+bestParsimony 177675
+ auxParsimony 177553
+bestParsimony 177553
+ auxParsimony 177501
+
+------------------------------------------------------------
+QueryId: 91 insertada en posicion: 8 con parsimonia total de 177501
+Total parsimony 177501
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 181047
+bestParsimony 181047
+ auxParsimony 180652
+bestParsimony 180652
+ auxParsimony 177779
+bestParsimony 177779
+ auxParsimony 177662
+bestParsimony 177662
+ auxParsimony 177591
+
+------------------------------------------------------------
+QueryId: 92 insertada en posicion: 8 con parsimonia total de 177591
+Total parsimony 177591
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 180617
+bestParsimony 180617
+ auxParsimony 180214
+bestParsimony 180214
+ auxParsimony 177227
+bestParsimony 177227
+ auxParsimony 177149
+
+------------------------------------------------------------
+QueryId: 93 insertada en posicion: 8 con parsimonia total de 177149
+Total parsimony 177149
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182043
+bestParsimony 182043
+ auxParsimony 181464
+bestParsimony 181464
+ auxParsimony 178715
+bestParsimony 178715
+ auxParsimony 178578
+bestParsimony 178578
+ auxParsimony 178445
+bestParsimony 178445
+ auxParsimony 178250
+bestParsimony 178250
+ auxParsimony 177496
+
+------------------------------------------------------------
+QueryId: 94 insertada en posicion: 31 con parsimonia total de 177496
+Total parsimony 177496
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 182337
+bestParsimony 182337
+ auxParsimony 181638
+bestParsimony 181638
+ auxParsimony 178957
+bestParsimony 178957
+ auxParsimony 178812
+bestParsimony 178812
+ auxParsimony 178750
+bestParsimony 178750
+ auxParsimony 178686
+bestParsimony 178686
+ auxParsimony 178518
+bestParsimony 178518
+ auxParsimony 178411
+bestParsimony 178411
+ auxParsimony 177517
+bestParsimony 177517
+ auxParsimony 177435
+
+------------------------------------------------------------
+QueryId: 95 insertada en posicion: 36 con parsimonia total de 177435
+Total parsimony 177435
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 193565
+bestParsimony 193565
+ auxParsimony 193166
+bestParsimony 193166
+ auxParsimony 191644
+bestParsimony 191644
+ auxParsimony 191463
+bestParsimony 191463
+ auxParsimony 191344
+bestParsimony 191344
+ auxParsimony 191329
+bestParsimony 191329
+ auxParsimony 191267
+bestParsimony 191267
+ auxParsimony 186928
+
+------------------------------------------------------------
+QueryId: 96 insertada en posicion: 45 con parsimonia total de 186928
+Total parsimony 186928
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 193613
+bestParsimony 193613
+ auxParsimony 193206
+bestParsimony 193206
+ auxParsimony 191668
+bestParsimony 191668
+ auxParsimony 191491
+bestParsimony 191491
+ auxParsimony 191380
+bestParsimony 191380
+ auxParsimony 191355
+bestParsimony 191355
+ auxParsimony 191283
+bestParsimony 191283
+ auxParsimony 186923
+
+------------------------------------------------------------
+QueryId: 97 insertada en posicion: 45 con parsimonia total de 186923
+Total parsimony 186923
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 192801
+bestParsimony 192801
+ auxParsimony 192399
+bestParsimony 192399
+ auxParsimony 190811
+bestParsimony 190811
+ auxParsimony 190591
+bestParsimony 190591
+ auxParsimony 190588
+bestParsimony 190588
+ auxParsimony 190472
+bestParsimony 190472
+ auxParsimony 190454
+bestParsimony 190454
+ auxParsimony 190396
+bestParsimony 190396
+ auxParsimony 186364
+
+------------------------------------------------------------
+QueryId: 98 insertada en posicion: 45 con parsimonia total de 186364
+Total parsimony 186364
+------------------------------------------------------------
+bestParsimony -1
+ auxParsimony 192119
+bestParsimony 192119
+ auxParsimony 191709
+bestParsimony 191709
+ auxParsimony 189826
+bestParsimony 189826
+ auxParsimony 189702
+bestParsimony 189702
+ auxParsimony 189661
+bestParsimony 189661
+ auxParsimony 189633
+bestParsimony 189633
+ auxParsimony 189442
+bestParsimony 189442
+ auxParsimony 189421
+bestParsimony 189421
+ auxParsimony 189327
+bestParsimony 189327
+ auxParsimony 184276
+
+------------------------------------------------------------
+QueryId: 99 insertada en posicion: 45 con parsimonia total de 184276
+Total parsimony 184276
+------------------------------------------------------------
