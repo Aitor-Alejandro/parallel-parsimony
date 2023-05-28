@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "PARS.h"
+#include "Pruebas.h"
 using namespace std;
 
 int main (int argc, char *argv[])
@@ -20,7 +21,22 @@ int main (int argc, char *argv[])
 	tree_fic=argv[3];
 	cout<<seq_file<<" "<<query_file<<" "<<tree_fic<<endl;	
 	
+
+	int pars1, pars2, pars3;
 	PARS app (seq_file, query_file);			
 	app.run(tree_fic, t1, t2);
+	pars1 = app.getTotalParsimony();
+	printf("final de app\n");
+	Pruebas* pruebas = new Pruebas(app);
+	printf("pruebas creadas\n");
+	pars2 = pruebas->testParsRefTree();
+	if (pars1 == pars2)
+		printf("IGUALES\n");
+	else{
+		printf("diferentes\n");
+		printf("PARS 1: %d\n", pars1);
+		printf("PARS 2: %d\n", pars2);
+	}
+	
 }
 

@@ -293,15 +293,13 @@ void PARS::initializeParsTree ()
 	for(i=0; i<nodes.size(); i++)
 	{
 		aux_nsons = nodes[i]->getNumberOfSons();
-		//Node* father = nodes[i]->getFather();
-		//if (father != NULL)
-		//	int id_father = father->getId();
 		if (aux_nsons!=0)
 		{	
 			//INNER NODES
 			parsNodes[current_inner].number_of_sons = aux_nsons;
 			inner_index[i]=current_inner;
 			aux_correspondencia[current_inner] = i;
+			parsNodes[current_inner].id_node = i;
 
 			father = nodes[i]->getFather();
 			if (father != NULL) id_father = father->getId();
@@ -419,13 +417,13 @@ int PARS::calculateParsimonyRefTree (double &t1, double &t2)
 	}
 				
 	printf("PARSIMONY SCORE %d\n", accPars);
-	totalParsimony = accPars;
+	//totalParsimony = accPars;
 	delete(my_characters);
 	delete(array_reference_sequences_omp);
 	//Showing execution times
 	t2 = get_time();
 	printf("Reference tree evaluation: Time spent: %f\n", t2-t1);
-	return 0;
+	return accPars;
 }
 
 
@@ -654,6 +652,12 @@ void PARS::clonePars (typeNode* dst, typeNode* src){
 		}
 	}
 }
+
+void PARS::cloneRefSeq(char* dst, char* src){
+	for (int i = 0; i < n_sites*n_sequences; i++){
+		dst[i] = src[i];
+	}
+}
 /*
 void PARS::writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony){
 	solveFile << "Query id: " << queryId << " Position branch: " << position << " Parsimony value: " << bestParsimony << "\n";
@@ -679,19 +683,20 @@ int PARS::run (string fic_tree, double &t1, double &t2)
 	initializeReferenceSequences();
 	initializeQuerySequences();
 	initializeParsTree();
-	calculateParsimonyRefTree (t1, t2);
-	
+	totalParsimony = calculateParsimonyRefTree (t1, t2);
+	//totalParsimony = 0;
 	/***********************************
 	************************************
 	HERE WE CALL THE PLACEMENT ALGORITHM	
 	************************************
 	************************************/
 
-	TreeHeuristic* treeH = new TreeHeuristic(refTree);
-	treeH->show();
-	calculateParsimonyQuerys(t1, t2);
-	deleteAuxParsStructures();
-	if(reference_sequences!=NULL)
+	//TreeHeuristic* treeH = new TreeHeuristic(refTree);
+	//treeH->show();
+	//calculateParsimonyQuerys(t1, t2);
+	//deleteAuxParsStructures();
+	//Pruebas *pruebas = new Pruebas(parsNodes, array_query_sequences, num_internal_nodes, n_sites);
+	/*if(reference_sequences!=NULL)
 	{
 		for (i=0; i<n_sequences; i++)
 				delete reference_sequences[i];
@@ -712,8 +717,53 @@ int PARS::run (string fic_tree, double &t1, double &t2)
 		  delete(refTree);  
 	}
 
-	if (mtr!=NULL) delete (mtr);
-	return 0;
+	if (mtr!=NULL) delete (mtr);*/
+	
+	return totalParsimony;
+}
+
+typeNode* PARS::getParsNodes(){
+	return parsNodes;
+}
+
+int PARS::getNumInternalNodes(){
+	return num_internal_nodes;
+}
+
+int PARS::getNumberOfSequences(){
+	return n_sequences;
+}
+
+char* PARS::getArrayReferenceSequences(){
+	return array_reference_sequences;
+}
+
+char* PARS::getArrayQuerySequences(){
+	return array_query_sequences;
+}
+
+int PARS::get_n_sites(){
+	return n_sites;
+}
+
+int PARS::getTotalParsimony(){
+	return totalParsimony;
+}
+
+int PARS::get_n_querys(){
+	return n_queries;
+}
+
+TreeHeuristic* PARS::getTreeH(){
+	return treeH;
+}
+
+void PARS::setParsNodes(typeNode* newParsNodes){
+	parsNodes = newParsNodes;
+}
+
+void PARS::set_num_internal_nodes(int new_num_internal_nodes){
+	num_internal_nodes = new_num_internal_nodes;
 }
 
 /** Destructor */

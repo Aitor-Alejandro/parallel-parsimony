@@ -10,6 +10,7 @@
 #include "TreeInterface.h"
 #include "TreeHeuristic.h"
 #include "MersenneTwister.h"
+//#include "Pruebas.h"
 #include <fstream>
 #include <omp.h>
 
@@ -22,9 +23,10 @@ typedef struct
 {
 	int partialParsimony = 0;
 	int father = -1;//FATHER ID IN GLOBAL TREE, NEEDS CORRESPONDENCY ARRAY
+	int id_node;
 	char* characters;
 	short number_of_sons; //Number of children of the node
-	int sons_ids [MAX_SONS]; //Identifiers of the children node
+	int sons_ids [MAX_SONS]; //Identifiers of the children node ID IF GLOBAL TREE
 }typeNode;
 
 
@@ -81,10 +83,27 @@ class PARS
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
 		void clonePars(typeNode* dst, typeNode* src);
+		/*clone reference sequences*/
+		void cloneRefSeq(char* dst, char* src);
 		//void writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony);
 		/* Main method */
 		int run (string fic_tree, double &t1, double &t2); //Main method, where the placement takes place
 		
+		typeNode* getParsNodes();
+		int getNumInternalNodes();
+		int getNumberOfSequences();
+		char* getArrayReferenceSequences();
+		char* getArrayQuerySequences();
+		int get_n_sites();
+		int getTotalParsimony();
+		int get_n_querys();
+		TreeHeuristic* getTreeH();
+		
+
+		void setParsNodes(typeNode* newParsNodes);
+		void set_num_internal_nodes(int new_num_internal_nodes);
+
+		//void setParsNodes(typeNode* newParsNodes);
 		~PARS(); //Destructor
 };
 

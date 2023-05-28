@@ -46,7 +46,10 @@ class TreeHeuristic{
         TreeHeuristic(TreeInterface* interface);
         int setScores();
         int getParsimony();
+        int getNumNodos();
+        int getNumLeaves();
         void setFalseVisitados();
+        void setTreuVisitado(int index);
         void show();
         void setCorrespondencias(int *vec);
         int* getCorrespondencias();

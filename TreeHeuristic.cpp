@@ -35,10 +35,22 @@ int TreeHeuristic::getParsimony(){
     return (heuristicTree->getParsimony());
 }
 
+int TreeHeuristic::getNumNodos(){
+    return numNodos;
+}
+
+int TreeHeuristic::getNumLeaves(){
+    return numHojas;
+}
+
 void TreeHeuristic::setFalseVisitados(){
     for (int i = 0; i < numNodos; i++){
         nodosVisitados[i] = false;
     }
+}
+
+void TreeHeuristic::setTreuVisitado(int index){
+    nodosVisitados[index] = true;
 }
 
 void TreeHeuristic::show(){
