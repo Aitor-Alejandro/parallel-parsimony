@@ -354,7 +354,6 @@ void PARS::deleteAuxParsStructures()
 int PARS::calculateParsimonyRefTree (double &t1, double &t2)
 {
 	int i,j,k,l;
-		
 	//COLUMN-MAJOR ORDER VARIABLE FOR THE CPU DATASET
     char* array_reference_sequences_omp;
     array_reference_sequences_omp = new char [n_sequences*n_sites];
@@ -426,20 +425,118 @@ int PARS::calculateParsimonyRefTree (double &t1, double &t2)
 	return accPars;
 }
 
+void PARS::genInternalNode(typeNode* internalNode, char* query, char* characters){
+	char aux_value;
+	for (int i = 0; i < n_sites; i++){
+		aux_value = query[i] & characters[i];
+		if (aux_value == 0){
+			internalNode->partialParsimony++;
+		}
+		internalNode->characters[i] = query[i] | characters[i];
+	}
+}
 
-int PARS::calculateParsimonyQuerys(double &t1, double &t2){
+void PARS::modifyVector(typeNode* internalNode, int father, int son){
+	internalNode->father = father;
+	//parsNodes[father].sons_ids[son] = internalNode->id_node;
+}
+
+int PARS::calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux){
+	int node;
+	int node_class, node_id;
+	char site_value, son_value, aux_value;
+
+	node = fatherNode;
+	node_class = node_id = 0;
+	site_value = son_value = aux_value = 0;
+	
+	printf("Son replaced %d\n",son_replaced);
+	for (int i = 0; i < n_sites; i++){
+		site_value = 31;
+		for (int j = 0; j < parsAux[node].number_of_sons; j++){
+			
+		}
+	}
+	//for (int i = 0; i < n_sites; i++){
+		//site_value = 31;
+		//for (int j = 0; j < parsAux[node].number_of_sons; j++){
+			//if (j == son_replaced){
+		//	printf("NODES %d", j);	
+			//}
+		//}
+		//printf("\n");
+	//}
+/*	int node = fatherNode;
+	int node_class, node_id;
+	char site_value, son_value, aux_value;
+
+	parsAux[node].partialParsimony = 0;
+
+	for (int i = 0; i < n_sites; i++){
+		site_value = 31;
+		for (int j = 0; j < parsAux[node].number_of_sons; j++){
+			if (j != son_replaced){//SONS//esto esta mal, entrara en varios nodos porque solo
+				node_class = parsAux[node].sons_ids[j] & 0x80000000;
+				node_id = parsAux[node].sons_ids[j] & 0x7FFFFFFF;
+				if (node_class == 0x80000000)//INTERNAL NODE
+					son_value = parsAux[node_id].characters[i];
+				else
+					son_value = array_reference_sequences[0];
+				
+			}else{//INTERNAL NODE
+				son_value = internalNode->characters[i];
+			}
+
+			aux_value = site_value & son_value;
+
+			if (aux_value == 0){
+				parsAux[node].partialParsimony++;
+			}
+			site_value[i] = aux_value | son_value;
+		}
+
+	}
+
+	if (node == parsAux[node].father)
+		node = -1;
+	else
+		node = parsAux[node].father;
+
+	
+	while (node != -1){
+		parsAux[node].partialParsimony = 0;
+		for (int i = 0; i < n_sites; i++){
+			site_value = 31;
+			for (int j = 0; j < parsAux[node].number_of_sons; j++){
+				node_class = parsAux[node].sons_ids[j] & 0x80000000;
+				node_id = parsAux[node].sons_ids[j] & 0x7FFFFFFF;
+				if (node_class == 0x80000000)//INTERNAL NODE
+					son_value = parsAux[node_id].characters[i];
+				else
+					son_value = array_reference_sequences[0];
+			}
+			
+			aux_value = site_value & son_value;
+
+			if (aux_value == 0){
+				parsAux[node].partialParsimony++;
+			}
+			if (node == parsAux[node].father)
+				node = -1;
+			else
+				node = parsAux[node].father;
+		}
+	return 0;
+	}
+	*/
+	return 0;
+}
+int** PARS::calculateParsimonyQuerys(double &t1, double &t2){
 	int i,j,k,l,m;
-	//COLUMN-MAJOR ORDER VARIABLE FOR THE CPU DATASET SEQUENCES
-    char* array_reference_sequences_omp;
-    array_reference_sequences_omp = new char [n_sequences*n_sites];
-	//COLUMN-MAJOR ORDER VARIABLE FOR DE CPU DATASET QUERYS
-	char* array_query_sequences_omp;
-	array_query_sequences_omp = new char [n_queries*n_sites];
 
 	//Initializing the partial parsimony scores array 
 	int accPars; //accumulated parsimony score
-	char* my_characters; //character state values for an inner node
-  	char* sequence_line; //sequence characters to be processed at the j-th iteration
+  	//char* sequence_line; //sequence characters to be processed at the j-th iteration
 	char* query_line;
 	int num_sons; //number of children of the node currently processed
 	int node_class; //type of node (leaf or internal)
@@ -450,150 +547,66 @@ int PARS::calculateParsimonyQuerys(double &t1, double &t2){
 
 	int auxParsimony = totalParsimony;
 	int bestParsimony = -1;
-	int position = -1;
+
 	typeNode* auxNode = new typeNode;
 	auxNode->characters = new char[n_sites];
 	typeNode* parsAux = new typeNode[num_internal_nodes];
-	typeNode* parsBest = new typeNode[num_internal_nodes];
 
 	for (i = 0; i < num_internal_nodes; i++){
 		parsAux[i].characters = new char[n_sites];
-		parsBest[i].characters = new char[n_sites];
 	}
 
-	/*for (int i = 0; i < num_internal_nodes; i++){
-		parsNodes[i].characters = new char [n_sites];
-	}
-*/
+	int index_x, index_y;
 
-	cloneParsNodes(parsAux, parsBest);
+	int* correspondencias;
+	correspondencias = treeH->getCorrespondencias();
+
+	int *arrayLeaves;
+	arrayLeaves = treeH->getArrayLeaves();
+	/*printf("PRUEBA CORRESPONDENCIA\n");
+	for (int o = 0; o < num_internal_nodes; o++)
+		printf("Index: %d Value: %d\n",o,correspondencias[o]);*/
+	cloneParsNodes(parsAux);
 
 	//Evaluation loop
 	t1 = get_time();
-	
-	//ORGANIZING REFERENCE SEQUENCES IN COLUMN-MAJOR ORDER	
-	k=0;
-    for (i=0; i<n_sites; i++)
-    {
-       	for(j=0; j<n_sequences; j++)
-       	{
-           	array_reference_sequences_omp[k]=array_reference_sequences[j*n_sites+i];
-           	k++;
-       	}
-    }
-
-	//ORGANIZING QUERY SEQUENCES IN COLUMN-MAJOR ORDER
-	k=0;
-	for (i=0; i<n_sites; i++)
-	{
-		for (j=0; j<n_queries; j++)
-		{
-			array_query_sequences_omp[k] = array_query_sequences[j*n_sites+i];
-			k++;
-		}
-	}
-
 
 	//MATRIX TO STORE PARSIMONY OF QUERYS IN EACH POSITION
 	int** matrixParsimony;
 	matrixParsimony=(int**)malloc(n_queries * sizeof(int*));
 	for (int n=0; n<n_queries; n++){
-		matrixParsimony[n]=(int*)malloc(num_internal_nodes * sizeof(int));
+		matrixParsimony[n]=(int*)malloc(treeH->getNumNodos() * sizeof(int));
 	}
-
-	printf ("Nº de nodos en el albol:------%d\n",n_parsNodes);
-	printf ("Nº de nodos internos arbol:---%d\n", num_internal_nodes);
-	printf ("Nº de nodos hojas\n");
-	//parsNodes[num_internal_nodes - 1].father = -1;
-
-	//ofstream solveFile;
-	//solveFile.open("resultados.txt");
-
-	printf("Total Parsimony: ->->-> %d", totalParsimony);
-	int auxP = 0;
-	printf("parsNodes original\n");
-	for (int w = 0; w < n_parsNodes; w++){
-		printf("(Id: %d, parsimony: %d)-", w, parsNodes[w].partialParsimony);
-		auxP += parsNodes[w].partialParsimony;
-	}
-	printf("Final parsimony: %d\n", auxP);
 
 	for (i = 0; i < n_queries; i++){
 		query_line = &array_query_sequences[i*n_sites];
-		cloneParsNodes(parsAux);
-		bestParsimony = -1;
+		//cloneParsNodes(parsAux);
+		bestParsimony = INT_MAX;//quiza cambiar de sitio
+		index_x = i;
 		for (j = 0; j < num_internal_nodes; j++){
-			
-			k = j;
-			//auxNode = &parsAux[j];
-			auxParsimony = totalParsimony;
-			cloneParsNodes(parsAux);
-			while (k != -1){
-				//printf("Nodo actual %d",k);
-				auxNode = &parsAux[k];
-				
-				for (l = 0; l < n_sites; l++){
-					aux_value = query_line[l] & auxNode->characters[l];
-					if (aux_value == 0){
-						aux_value = query_line[l] | auxNode->characters[l];
-						parsAux[k].partialParsimony++;
-						auxParsimony++;
-						
+			printf("Number of sons %d\n",parsAux[j].number_of_sons);
+			for (k = 0; k < parsAux[j].number_of_sons; k++){
+				cloneParsNodes(parsAux);
+				node_class = parsAux[j].sons_ids[k] & 0x80000000;
+				node_id = parsAux[j].sons_ids[k] & 0x7FFFFFFF;
+				//for (int l = 0; l < n_sites; l++){
+					if (node_class == 0x80000000){
+						genInternalNode(auxNode, query_line, parsNodes[node_id].characters);
+						auxParsimony = calculateParsimonyQuerysPriv(j, k, auxNode, parsAux);
+					}else{
+						genInternalNode(auxNode, query_line, &array_reference_sequences[node_id]);
+						auxParsimony = calculateParsimonyQuerysPriv(j, k, auxNode, parsAux);
 					}
-					parsAux[auxNode->father].characters[l] = aux_value;
-				}
-				if (k == auxNode->father)
-					k=-1;
-				else{
-					//printf(" jumping index %d to %d \n", k, auxNode->father);
-					k = auxNode->father;
-					//printf(" jumped succesfully\n");
-				}
+				//}
+				index_y = (node_class == 0x80000000) ? correspondencias[node_id]:arrayLeaves[node_id];
+				//index_y = node_class | node_id;
+				//printf("X=%d Y=%d\n", index_x, index_y);
+				matrixParsimony[index_x][index_y] = auxParsimony;//calculateParsimonyQuerysPriv(j, k, auxNode, parsAux);
 			}
-			
-			if (auxParsimony != totalParsimony &&(bestParsimony > auxParsimony || bestParsimony == -1)){
-				printf("bestParsimony %d\n", bestParsimony);
-				printf(" auxParsimony %d\n", auxParsimony);
-				clonePars(parsBest, parsAux);
-				bestParsimony = auxParsimony;
-				position = j;
-			}
-			
-			
-			//calculateParsimony
-		}
-		printf("\n------------------------------------------------------------\n");
-		printf("QueryId: %d insertada en posicion: %d con parsimonia total de %d\n", i, position, bestParsimony);
-		
-		auxP = 0;
-		for (int w = 0; w < n_parsNodes; w++){
-			//printf("(Parsimony: %d)-",parsBest[w].partialParsimony);
-			auxP += parsBest[w].partialParsimony;
-		}
-		printf("Total parsimony %d\n", auxP);
-		printf("------------------------------------------------------------\n");
-		//writeFileBruteForce(solveFile, parsBest, i, position, bestParsimony);
-		
-	}
-	//solveFile.close();
-
-	/*my_characters = new char [num_internal_nodes];
-	for (j=0; j<n_sites; j++)
-	{
-		sequence_line = &array_reference_sequences_omp[n_sequences*j];
-		query_line = &array_query_sequences_omp[n_queries*j];
-		for (k=0; num_internal_nodes; k++)
-		{
-			site_value = 31;
-			num_sons = parsNodes[k].number_of_sons;
-			for (l=0; l<num_sons; l++)
-			{
-			
-			}
+			printf("\n");
 		}
 	}
-	*/
-	return 0;
+	return matrixParsimony;
 }
 
 void PARS::cloneParsNodes(typeNode* dest1, typeNode* dest2){
@@ -613,11 +626,6 @@ void PARS::cloneParsNodes(typeNode* dest1, typeNode* dest2){
 			//printf("Node: %d Char: %d/%d\n", i, k, n_sites);
 			dest1[i].characters[k] = dest2[i].characters[k] = parsNodes[i].characters[k];
 		}
-		/*for (int i = 0; i < num_internal_nodes; i++){
-		parsNodes[i].characters = new char [n_sites];
-	}
-*/
-		//dest1[]
 	}
 }
 
@@ -658,15 +666,7 @@ void PARS::cloneRefSeq(char* dst, char* src){
 		dst[i] = src[i];
 	}
 }
-/*
-void PARS::writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony){
-	solveFile << "Query id: " << queryId << " Position branch: " << position << " Parsimony value: " << bestParsimony << "\n";
-	for (int i = 0; i < n_parsNodes; i++){
-		solveFile << "Node index: " << i << " Partial parsimony: " << parsBest[i].partialParsimony << "-";
-	}
-	solveFile << "\n-----------------------------\n";
-}
-*/
+
 /**
 *	Main method. Parameters:
 *	fic_tree: name of the input file containing the reference tree
@@ -678,12 +678,14 @@ int PARS::run (string fic_tree, double &t1, double &t2)
 {
     int i;
 	//Reading and initializing input tree
-	
+	int** matrix;
 	genInitialTree(fic_tree);  	
 	initializeReferenceSequences();
 	initializeQuerySequences();
 	initializeParsTree();
 	totalParsimony = calculateParsimonyRefTree (t1, t2);
+	treeH->show();
+	matrix = calculateParsimonyQuerys(t1, t2);
 	//totalParsimony = 0;
 	/***********************************
 	************************************

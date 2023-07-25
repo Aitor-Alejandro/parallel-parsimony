@@ -48,11 +48,13 @@ class TreeHeuristic{
         int getParsimony();
         int getNumNodos();
         int getNumLeaves();
+        bool getVisited(int index);
         void setFalseVisitados();
         void setTreuVisitado(int index);
         void show();
         void setCorrespondencias(int *vec);
         int* getCorrespondencias();
+        int* getArrayLeaves();
         void bruteForce();
         ~TreeHeuristic();
         

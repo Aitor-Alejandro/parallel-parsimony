@@ -29,7 +29,7 @@ class Pruebas{
         int testParsRefTree();
         typeNode* generarParsNodes();
         void initializeParsForTestQuerys(int id_query, int pars_index);
-        int testParsQuerys();
+        int** testParsQuerys();
         ~Pruebas();
 };
 

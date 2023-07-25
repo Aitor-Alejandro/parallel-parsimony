@@ -10,7 +10,7 @@
 #include "TreeInterface.h"
 #include "TreeHeuristic.h"
 #include "MersenneTwister.h"
-//#include "Pruebas.h"
+#include <limits>
 #include <fstream>
 #include <omp.h>
 
@@ -63,7 +63,10 @@ class PARS
 	char* array_query_sequences; //query sequences in hexadecimal codification (char array)
 	
 	//ofstream solveFile;
-		
+	private:
+		void genInternalNode(typeNode* internalNode, char* query, char* characters);
+		void modifyVector(typeNode* internalNode, int father, int son);
+		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
@@ -76,10 +79,12 @@ class PARS
 		void initializeQuerySequences (); //Initialize the query sequences (hexadecimal code)
 		void initializeParsTree (); //Initialize the parsNodes structure (topology for kernel processing)
 		void deleteAuxParsStructures(); //Deletes the parsNodes structure and initializes to 0 its related variables
+
 		/* Parsimony calculations over the original reference tree */
 		int calculateParsimonyRefTree (double &t1, double &t2); //Parsimony function code for CPU in char configuration
+
 		/* Parsimony calculations for each Query*/
-		int calculateParsimonyQuerys (double &t1, double &t2);
+		int** calculateParsimonyQuerys (double &t1, double &t2);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
 		void clonePars(typeNode* dst, typeNode* src);

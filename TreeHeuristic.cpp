@@ -43,6 +43,10 @@ int TreeHeuristic::getNumLeaves(){
     return numHojas;
 }
 
+bool TreeHeuristic::getVisited(int index){
+    return nodosVisitados[index];
+}
+
 void TreeHeuristic::setFalseVisitados(){
     for (int i = 0; i < numNodos; i++){
         nodosVisitados[i] = false;
@@ -55,10 +59,10 @@ void TreeHeuristic::setTreuVisitado(int index){
 
 void TreeHeuristic::show(){
     printf("-----------------------Show Tree Heuristic---------------------\n");
-    for (int i = 0; i < arrayLeaves.size(); i++)
-        printf("Leave:%d with id:%d\n", i, arrayLeaves[i]);
+    //for (int i = 0; i < arrayLeaves.size(); i++)
+    //    printf("Leave:%d with id:%d\n", i, arrayLeaves[i]);
     for (int i = 0; i < matrix.size(); i++){
-        printf("Leave %d with ancestors:->>>", arrayLeaves[i]);
+        printf("Leave ID: %d with ancestors:->>>", arrayLeaves[i]);
         for (int j = 0; j < matrix[i].size(); j++){
             printf("-%d", matrix[i][j]);
         }
@@ -70,6 +74,15 @@ void TreeHeuristic::show(){
     }
     printf("ROOT::: %d\n", root);
     printf("NUM HOJAS::: %d\n", arrayLeaves.size());
+    printf("ARRAY LEAVES-------\n");
+    for (int i = 0; i < arrayLeaves.size(); i++){
+        printf("-%d-", arrayLeaves[i]);
+    }
+    printf("\n");
+    printf("ARRAY CORR---------\n");
+    for (int i = 0; i < numNodos - arrayLeaves.size(); i++){
+        printf("-%d-", correspondencias[i]);
+    }
     printf("\n-----------------------End Tree Heuristic----------------------\n");
 }
 
@@ -79,6 +92,11 @@ void TreeHeuristic::setCorrespondencias(int *vec){
 
 int* TreeHeuristic::getCorrespondencias(){
     return correspondencias;
+}
+
+int *TreeHeuristic::getArrayLeaves(){
+    int* leaves_ptr = arrayLeaves.data();
+    return leaves_ptr;
 }
 
 void TreeHeuristic::bruteForce(){

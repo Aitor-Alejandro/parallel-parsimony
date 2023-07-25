@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
 	PARS app (seq_file, query_file);			
 	app.run(tree_fic, t1, t2);
 	pars1 = app.getTotalParsimony();
-	printf("final de app\n");
+	/*printf("final de app\n");
 	Pruebas* pruebas = new Pruebas(app);
 	printf("pruebas creadas\n");
 	pars2 = pruebas->testParsRefTree();
@@ -36,7 +36,7 @@ int main (int argc, char *argv[])
 		printf("diferentes\n");
 		printf("PARS 1: %d\n", pars1);
 		printf("PARS 2: %d\n", pars2);
-	}
+	}*/
 	
 }
 
