@@ -51,7 +51,7 @@ class PARS
 	DNA* alphabet; //BIO++ DNA alphabet
 	MTRand* mtr; //Random number generator
 
-	typeNode* parsNodes; //Phylogenetic tree representation using our optimized topological node structure
+	typeNode* parsNodes, *copy_parsNodes; //Phylogenetic tree representation using our optimized topological node structure
 	int n_parsNodes; //Number of nodes in the phylogeny
 	int* internal_nodes; //Identifiers of internal nodes
 	int num_internal_nodes; //Number of internal nodes
@@ -64,12 +64,13 @@ class PARS
 	
 	//ofstream solveFile;
 	private:
-		void genInternalNode(typeNode* internalNode, char* query, char* characters);
+		
 		void modifyVector(typeNode* internalNode, int father, int son);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
+		void genInternalNode(typeNode* internalNode, char* query, char* characters);
 		PARS(string _refFileName, string _queryFileName); //Constructor
 		/* Initialization procedures */
 		PhylogeneticTree* readTreeFromFile (FILE* file, int _id); //Reads the reference phylogenetic tree from file
@@ -85,9 +86,11 @@ class PARS
 
 		/* Parsimony calculations for each Query*/
 		int** calculateParsimonyQuerys (double &t1, double &t2);
+		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
 		void clonePars(typeNode* dst, typeNode* src);
+		void restaurar(typeNode*dst, typeNode*src, int index_node);
 		/*clone reference sequences*/
 		void cloneRefSeq(char* dst, char* src);
 		//void writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony);
@@ -107,6 +110,9 @@ class PARS
 
 		void setParsNodes(typeNode* newParsNodes);
 		void set_num_internal_nodes(int new_num_internal_nodes);
+		void set_n_sequences(int new_n_sequences);
+		void set_seq(char* new_sequences);
+		void set_n_sites(int n_sites);
 
 		//void setParsNodes(typeNode* newParsNodes);
 		~PARS(); //Destructor

@@ -33,6 +33,15 @@
 using namespace std;
 using namespace bpp;
 
+typedef struct{
+    //sub_index of inner nodes and leaves
+    //
+    int sub_index;
+    //sub_id of inner nodes and leaves
+    //includes bit distinct inner nodes and leaves
+    int sub_id;
+}nodePhyl;
+
 class TreeHeuristic{
     PhylogeneticTree* heuristicTree;
     int root;
@@ -40,19 +49,32 @@ class TreeHeuristic{
     char** internal_sequences;
     vector <int> arrayLeaves; //vector de las hojas del arbol
     vector<vector<int>> matrix;
-    int numHojas, profundidad, numNodos;
+
+    vector<vector<bool>> grafo;
+    
+    vector<nodePhyl> vectorCorrespondencias;
+    //vector</*struct TypeNode*/>diccionarioNodos;
+
+    int numHojas, profundidad, numNodos, numInner;
     bool* nodosVisitados;
     public:
         TreeHeuristic(TreeInterface* interface);
+        void iniciarGrafo();
+
         int setScores();
         int getParsimony();
         int getNumNodos();
         int getNumLeaves();
+        int getNumInnerNodes();
+
         bool getVisited(int index);
         void setFalseVisitados();
         void setTreuVisitado(int index);
-        void show();
         void setCorrespondencias(int *vec);
+        void setVectorCorresponcencias(nodePhyl* vec,int nodes);
+
+        void show();
+        
         int* getCorrespondencias();
         int* getArrayLeaves();
         void bruteForce();

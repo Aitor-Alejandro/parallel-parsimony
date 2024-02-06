@@ -3,6 +3,7 @@
 #include <iostream>
 #include "PARS.h"
 #include "Pruebas.h"
+#include "PruebasPARS.h"
 using namespace std;
 
 int main (int argc, char *argv[])
@@ -25,17 +26,25 @@ int main (int argc, char *argv[])
 	int pars1, pars2, pars3;
 	PARS app (seq_file, query_file);			
 	app.run(tree_fic, t1, t2);
-	pars1 = app.getTotalParsimony();
-	/*printf("final de app\n");
+	//pars1 = app.getTotalParsimony();
+	//printf("final de app\n");
 	Pruebas* pruebas = new Pruebas(app);
-	printf("pruebas creadas\n");
-	pars2 = pruebas->testParsRefTree();
-	if (pars1 == pars2)
-		printf("IGUALES\n");
-	else{
-		printf("diferentes\n");
-		printf("PARS 1: %d\n", pars1);
-		printf("PARS 2: %d\n", pars2);
+	pruebas->iniciarPruebas();
+	PruebasPARS *pPARS = new PruebasPARS(app);
+	pPARS->iniciarPruebas();
+	//printf("pruebas creadas\n");
+	//pars2 = pruebas->testParsRefTree();
+	//if (pars1 == pars2)
+	//	printf("IGUALES\n");
+	//else{
+	//	printf("diferentes\n");
+	//	printf("PARS 1: %d\n", pars1);
+	//	printf("PARS 2: %d\n", pars2);
+	//}
+	//int **parsQuerys;
+	//parsQuerys = pruebas->testParsQuerys();
+	/*if (parsQuerys == NULL){
+		printf ("NO SE CUELGA\n");
 	}*/
 	
 }

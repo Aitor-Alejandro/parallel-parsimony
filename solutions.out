@@ -1,0 +1,145 @@
+../Datasets/salmonella/reference.phy ../Datasets/salmonella/query5.phy ../Datasets/salmonella/reftree.tree
+Initializing reference tree via BIO++
+Initializing reference tree -- DONE
+Initializing reference sequences... OK
+A total of 56 reference sequences, with length 119750
+Initializing query sequences... OK
+A total of 5 query sequences, with length 119750
+Scoring reference tree
+PARSIMONY SCORE 173323
+Reference tree evaluation: Time spent: 0.023277
+
+-------TIME TO EVALUEATE PARSIMONY OF QUERIES-------
+Reference tree evaluation queries: Time spent: 2.216260
+///////////////////////////////////////////////////////////
+
+QUERY Nº 0 // pos: (45, 0) - parsimony: 159154 
+QUERY Nº 1 // pos: (27, 0) - parsimony: 171481 
+QUERY Nº 2 // pos: (27, 0) - parsimony: 171470 
+QUERY Nº 3 // pos: (27, 0) - parsimony: 171303 
+QUERY Nº 4 // pos: (45, 0) - parsimony: 170416 
+Iniciando estructuras......
+Estructuras iniciadas
+Copiando parsNodes......
+parsNodes copiado
+FINAL
+../Datasets/salmonella/reference.phy ../Datasets/salmonella/query5.phy ../Datasets/salmonella/reftree.tree
+Initializing reference tree via BIO++
+Initializing reference tree -- DONE
+Initializing reference sequences... OK
+A total of 56 reference sequences, with length 119750
+Initializing query sequences... OK
+A total of 5 query sequences, with length 119750
+Scoring reference tree
+PARSIMONY SCORE 173323
+Reference tree evaluation: Time spent: 0.024502
+
+-------TIME TO EVALUEATE PARSIMONY OF QUERIES-------
+Reference tree evaluation queries: Time spent: 2.283048
+///////////////////////////////////////////////////////////
+
+QUERY Nº 0 // pos: (45, 0) - parsimony: 159154 
+QUERY Nº 1 // pos: (27, 0) - parsimony: 171481 
+QUERY Nº 2 // pos: (27, 0) - parsimony: 171470 
+QUERY Nº 3 // pos: (27, 0) - parsimony: 171303 
+QUERY Nº 4 // pos: (45, 0) - parsimony: 170416 
+Iniciando estructuras......
+Estructuras iniciadas
+Copiando parsNodes......
+parsNodes copiado
+FINAL
+../Datasets/salmonella/reference.phy ../Datasets/salmonella/query5.phy ../Datasets/salmonella/reftree.tree
+Initializing reference tree via BIO++
+Initializing reference tree -- DONE
+Initializing reference sequences... OK
+A total of 56 reference sequences, with length 119750
+Initializing query sequences... OK
+A total of 5 query sequences, with length 119750
+Scoring reference tree
+PARSIMONY SCORE 173323
+Reference tree evaluation: Time spent: 0.023052
+
+-------TIME TO EVALUEATE PARSIMONY OF QUERIES-------
+Reference tree evaluation queries: Time spent: 2.187481
+///////////////////////////////////////////////////////////
+
+QUERY Nº 0 // pos: (45, 0) - parsimony: 159154 
+QUERY Nº 1 // pos: (27, 0) - parsimony: 171481 
+QUERY Nº 2 // pos: (27, 0) - parsimony: 171470 
+QUERY Nº 3 // pos: (27, 0) - parsimony: 171303 
+QUERY Nº 4 // pos: (45, 0) - parsimony: 170416 
+Iniciando estructuras......
+Estructuras iniciadas
+Copiando parsNodes......
+parsNodes copiado
+FINAL
+../Datasets/salmonella/reference.phy ../Datasets/salmonella/query50.phy ../Datasets/salmonella/reftree.tree
+Initializing reference tree via BIO++
+Initializing reference tree -- DONE
+Initializing reference sequences... OK
+A total of 56 reference sequences, with length 119750
+Initializing query sequences... OK
+A total of 50 query sequences, with length 119750
+Scoring reference tree
+PARSIMONY SCORE 173323
+Reference tree evaluation: Time spent: 0.024241
+
+-------TIME TO EVALUEATE PARSIMONY OF QUERIES-------
+Reference tree evaluation queries: Time spent: 23.131006
+///////////////////////////////////////////////////////////
+
+QUERY Nº 0 // pos: (45, 0) - parsimony: 158882 
+QUERY Nº 1 // pos: (45, 0) - parsimony: 159433 
+QUERY Nº 2 // pos: (45, 0) - parsimony: 158920 
+QUERY Nº 3 // pos: (45, 0) - parsimony: 159011 
+QUERY Nº 4 // pos: (45, 0) - parsimony: 159318 
+QUERY Nº 5 // pos: (45, 0) - parsimony: 158301 
+QUERY Nº 6 // pos: (45, 0) - parsimony: 158321 
+QUERY Nº 7 // pos: (45, 0) - parsimony: 159524 
+QUERY Nº 8 // pos: (45, 0) - parsimony: 159478 
+QUERY Nº 9 // pos: (45, 0) - parsimony: 158244 
+QUERY Nº 10 // pos: (45, 0) - parsimony: 158893 
+QUERY Nº 11 // pos: (45, 0) - parsimony: 158283 
+QUERY Nº 12 // pos: (45, 0) - parsimony: 158779 
+QUERY Nº 13 // pos: (45, 0) - parsimony: 158975 
+QUERY Nº 14 // pos: (45, 0) - parsimony: 158959 
+QUERY Nº 15 // pos: (45, 0) - parsimony: 158917 
+QUERY Nº 16 // pos: (45, 0) - parsimony: 159351 
+QUERY Nº 17 // pos: (45, 0) - parsimony: 158175 
+QUERY Nº 18 // pos: (45, 0) - parsimony: 158279 
+QUERY Nº 19 // pos: (45, 0) - parsimony: 158759 
+QUERY Nº 20 // pos: (45, 0) - parsimony: 158761 
+QUERY Nº 21 // pos: (45, 0) - parsimony: 158755 
+QUERY Nº 22 // pos: (45, 0) - parsimony: 158857 
+QUERY Nº 23 // pos: (45, 0) - parsimony: 158832 
+QUERY Nº 24 // pos: (45, 0) - parsimony: 158870 
+QUERY Nº 25 // pos: (45, 0) - parsimony: 159000 
+QUERY Nº 26 // pos: (45, 0) - parsimony: 159225 
+QUERY Nº 27 // pos: (45, 0) - parsimony: 159210 
+QUERY Nº 28 // pos: (45, 0) - parsimony: 158826 
+QUERY Nº 29 // pos: (45, 0) - parsimony: 158876 
+QUERY Nº 30 // pos: (45, 0) - parsimony: 158949 
+QUERY Nº 31 // pos: (45, 0) - parsimony: 159039 
+QUERY Nº 32 // pos: (45, 0) - parsimony: 160741 
+QUERY Nº 33 // pos: (45, 0) - parsimony: 161323 
+QUERY Nº 34 // pos: (45, 0) - parsimony: 158991 
+QUERY Nº 35 // pos: (45, 0) - parsimony: 158975 
+QUERY Nº 36 // pos: (45, 0) - parsimony: 159123 
+QUERY Nº 37 // pos: (45, 0) - parsimony: 159115 
+QUERY Nº 38 // pos: (45, 0) - parsimony: 159066 
+QUERY Nº 39 // pos: (45, 0) - parsimony: 158492 
+QUERY Nº 40 // pos: (45, 0) - parsimony: 158390 
+QUERY Nº 41 // pos: (45, 0) - parsimony: 159287 
+QUERY Nº 42 // pos: (45, 0) - parsimony: 158968 
+QUERY Nº 43 // pos: (45, 0) - parsimony: 159190 
+QUERY Nº 44 // pos: (45, 0) - parsimony: 159025 
+QUERY Nº 45 // pos: (45, 0) - parsimony: 159154 
+QUERY Nº 46 // pos: (27, 0) - parsimony: 171481 
+QUERY Nº 47 // pos: (27, 0) - parsimony: 171470 
+QUERY Nº 48 // pos: (27, 0) - parsimony: 171303 
+QUERY Nº 49 // pos: (45, 0) - parsimony: 170416 
+Iniciando estructuras......
+Estructuras iniciadas
+Copiando parsNodes......
+parsNodes copiado
+FINAL

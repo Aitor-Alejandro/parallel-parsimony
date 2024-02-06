@@ -1,36 +1,32 @@
 #ifndef _PRUEBAS_H_
 #define _PRUEBAS_H_
 
-#include <iostream>
-
-#include "TreeHeuristic.h"
 #include "PARS.h"
 
 class Pruebas{
     private:
-        PARS* parsTest;
-        TreeHeuristic *treeH;
-        typeNode** ptrArray;
-        typeNode* arrayNodes;
-        typeNode* qInternalNode;
-        typeNode* arrayPars;
-        int nodes_phyl;
-        int totalNodes;
-        int numLeafNodes;
-        int n_sites;
-        int n_queries;
-        int n_sequences;
-        char* array_querys;
-        char* array_reference;
-        char* array_ref_query;
-        char* query;
+        int parsimony;//parsimonia del arbol inicial
+        char *query;//va guardar el mismo valor que el nodo a sustituir, que se inserara como query
+        PARS *parsTest;//objeto pars
+        typeNode *copy_parsNodes, *parsNodes;//copias de parsNodes
+        typeNode *nodeP;//Nodo que se genera
+        /*
+
+              NodeP
+               /\
+              /  \
+             /    \
+          query  query
+
+        */
+
     public:
-        Pruebas(PARS app);
-        int testParsRefTree();
-        typeNode* generarParsNodes();
-        void initializeParsForTestQuerys(int id_query, int pars_index);
-        int** testParsQuerys();
-        ~Pruebas();
+        Pruebas(PARS pars);
+        void iniciarEstructuras();
+        void copiaSeguridadParsNodes();
+        void sustituciones();
+        void copiarCaracteres(int i, int j, int node_class, int node_id);
+        void iniciarPruebas();
 };
 
 #endif //_PRUEBAS_H_

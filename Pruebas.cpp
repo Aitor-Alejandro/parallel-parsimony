@@ -1,105 +1,80 @@
 #include "Pruebas.h"
 
 using namespace std;
-using namespace bpp;
-Pruebas::Pruebas(PARS app){
-    parsTest = &app;
-    n_sites = parsTest->get_n_sites();
-    n_queries = parsTest->get_n_querys();
-    nodes_phyl = parsTest->getNumInternalNodes()+1;
-    n_sequences = parsTest->getNumberOfSequences();
 
-    treeH = parsTest->getTreeH();
-    totalNodes = treeH->getNumNodos();
-    numLeafNodes = treeH->getNumLeaves();
-  
-    ptrArray = new typeNode*[(nodes_phyl)*sizeof(typeNode*)];
-    arrayPars = new typeNode[(nodes_phyl)*sizeof(typeNode)];
-    arrayNodes = new typeNode[(nodes_phyl-1)*sizeof(typeNode)];
-    
-    array_querys = parsTest->getArrayQuerySequences();
-    array_reference = parsTest->getArrayQuerySequences();
-    array_ref_query = new char [n_sites*(n_sequences+1)];
+Pruebas::Pruebas(PARS pars){
 
-    query = NULL;
-    qInternalNode = NULL;
+    parsTest =  &pars;
+    parsimony = parsTest->getTotalParsimony();
+}
 
-    for (int i = 0; i < nodes_phyl; i++)
-        arrayPars[i].characters = new char[n_sites];
-
-    for (int i = 0; i < nodes_phyl-1; i++)
-        arrayNodes[i].characters = new char[n_sites];
-
-    parsTest->clonePars(arrayNodes, parsTest->getParsNodes());
-    
-    for (int i = 1; i < nodes_phyl; i++){
-        ptrArray[i] = &arrayNodes[i-1];
+//reserva de espacio
+void Pruebas::iniciarEstructuras(){
+    query = new char [parsTest->get_n_sites()];
+    copy_parsNodes = new typeNode[parsTest->getNumInternalNodes()];
+    parsNodes = new typeNode[parsTest->getNumInternalNodes()];
+    for (int i = 0; i < parsTest->getNumInternalNodes(); i++){
+        copy_parsNodes[i].characters = new char[parsTest->get_n_sites()];
+        parsNodes[i].characters = new char [parsTest->get_n_sites()];
     }
+    nodeP = new typeNode;
+    nodeP->characters = new char[parsTest->get_n_sites()];
 }
 
-int Pruebas::testParsRefTree(){
-    printf("TEST PARSIMONY REF TREE\n");
-    double t1, t2;
-    int pars = parsTest->calculateParsimonyRefTree(t1, t2);
-    return pars;
+void Pruebas::copiaSeguridadParsNodes(){
+    parsTest->cloneParsNodes(copy_parsNodes, parsNodes);
 }
 
-typeNode* Pruebas::generarParsNodes(){
-
-    for (int i = 0; i < nodes_phyl; i++){
-        arrayPars[i].id_node = ptrArray[i]->id_node;
-        arrayPars[i].number_of_sons = ptrArray[i]->number_of_sons;
-        for (int j = 0; j < arrayPars[i].number_of_sons; j++){
-            arrayPars[i].sons_ids[j] = ptrArray[i]->sons_ids[j];
+void Pruebas::copiarCaracteres(int i, int j, int node_class, int node_id){
+    /*if (node_class == 0x00000000){
+        char* leaves = parsTest->getArrayReferenceSequences();
+        int offset = node_id*parsTest->get_n_sites();
+        for (int k = 0; k < parsTest->get_n_sites(); k++){
+            nodeP->characters[k] = leaves[offset+k];
         }
+        nodeP->partialParsimony = 0;
     }
-}
-
-void Pruebas::initializeParsForTestQuerys(int id_query, int pars_index){
-    int num_sons = arrayNodes[pars_index].number_of_sons;
-    /*if (pars_index != 0){
-
+    else{
+        for (int k = 0; k < parsTest->get_n_sites(); k++){
+            nodeP->characters[k] = copy_parsNodes[node_id].characters[k];
+        }
+        nodeP->partialParsimony = copy_parsNodes[node_id].partialParsimony;
     }*/
-    int node_class, node_id;
-    int father, child;
-    double t1, t2;
-    
-    
 }
 
-int** Pruebas::testParsQuerys(){
-    printf("TEST PARSIMONY QUERYS\n");
-    qInternalNode = new typeNode;
-    qInternalNode->characters = new char [n_sites];
-    qInternalNode->number_of_sons = 2;
-    qInternalNode->sons_ids[1] = numLeafNodes + 1;
-    qInternalNode->sons_ids[1] = qInternalNode->sons_ids[1]|(0<<31);
-
-    ptrArray[0] = qInternalNode;
-
-    parsTest->cloneRefSeq(array_reference, parsTest->getArrayReferenceSequences());
-
-    int id_internal_node = totalNodes-numLeafNodes;
-    id_internal_node = id_internal_node|(1<<31);
-
-    int pars = 0;
-    double t1, t2;
-    for (int i = 0; i < n_queries; i++){
-        query = &array_querys[n_sites*i];
-        for (int j = 0; j < n_sites; j++){
-            array_reference[numLeafNodes*n_sites+j] = query[j];
-        }
-        
-        for (int j = 1; j < nodes_phyl; j++){
-            ptrArray[j] = qInternalNode;
-            ptrArray[j-1] = &arrayNodes[j-1];
-            generarParsNodes();
-            initializeParsForTestQuerys(i, j);
+void Pruebas::sustituciones(){
+    int node_class;
+    int node_id;
+    char *leaves = parsTest->getArrayReferenceSequences();
+    for (int i = 0; i < parsTest->getNumInternalNodes(); i++){
+        for (int j = 0; j < copy_parsNodes[i].number_of_sons; j++){
+            node_class = copy_parsNodes[i].sons_ids[j] & 0x80000000;
+			node_id = copy_parsNodes[i].sons_ids[j] & 0x7FFFFFFF;
+            //if (node_class == 0x00000000){//
+                //copiarCaracteres(i,j,node_class, node_id);
+                if (node_class == 0x00000000)
+                    parsTest->genInternalNode(nodeP, &leaves[node_id*parsTest->get_n_sites()], &leaves[node_id*parsTest->get_n_sites()]);
+                else
+                    parsTest->genInternalNode(nodeP, copy_parsNodes[node_id].characters, copy_parsNodes[node_id].characters);
+                int parsimony = parsTest->calculateParsimonyQuerysPub(i, j, nodeP, parsNodes);
+                if (this->parsimony != parsimony){
+                    //printf("DIF\n");
+                    printf("%d---%d VS %d\n",node_id, this->parsimony, parsimony);
+                    parsTest->cloneParsNodes(parsNodes, copy_parsNodes);
+                }   
+            //}
         }
     }
-    //int pars = parsTest->calculateParsimonyRefTree(t1, t2);
 }
 
-Pruebas::~Pruebas(){
+void Pruebas:: iniciarPruebas(){
+    printf("Iniciando estructuras......\n");
+    iniciarEstructuras();
+    printf("Estructuras iniciadas\n");
+    printf("Copiando parsNodes......\n");
+    copiaSeguridadParsNodes();
+    printf("parsNodes copiado\n");
+    sustituciones();
+    printf("FINAL\n");
 
 }
