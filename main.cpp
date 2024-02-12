@@ -28,10 +28,12 @@ int main (int argc, char *argv[])
 	app.run(tree_fic, t1, t2);
 	//pars1 = app.getTotalParsimony();
 	//printf("final de app\n");
-	Pruebas* pruebas = new Pruebas(app);
-	pruebas->iniciarPruebas();
-	PruebasPARS *pPARS = new PruebasPARS(app);
-	pPARS->iniciarPruebas();
+	
+	//Pruebas* pruebas = new Pruebas(app);
+	//pruebas->iniciarPruebas();
+	//PruebasPARS *pPARS = new PruebasPARS(app);
+	//pPARS->iniciarPruebas();
+
 	//printf("pruebas creadas\n");
 	//pars2 = pruebas->testParsRefTree();
 	//if (pars1 == pars2)
