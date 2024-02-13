@@ -432,9 +432,9 @@ int PARS::calculateParsimonyRefTree (double &t1, double &t2)
 			{
 				node_class = parsNodes[k].sons_ids[l] & 0x80000000;
 				node_id = parsNodes[k].sons_ids[l] & 0x7FFFFFFF;
-				if (node_class == 0x80000000)//CLASS INNER NODE
+				if (node_class == 0x80000000)// INNER NODE
 					son_value = my_characters[node_id];
-				else//CLASS LEAF
+				else// LEAF
 					son_value = sequence_line[node_id];
 				aux_value = site_value & son_value;
 				if (aux_value==0)
