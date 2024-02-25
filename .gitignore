@@ -8,6 +8,9 @@ comp_secuenciales.sh
 ejecucion_tiempos_paralelo.sh
 ejecutar_sec.sh
 script.sh
+script_sec_comparator.sh
+bulk_parallel.sh
+thin_parallel.sh
 tara_10k.sh
 tara_100.sh
 draw_tree.py
@@ -15,3 +18,4 @@ python.py
 solutions/
 lib/
 parallel_data/
+thin_parallel_data/
