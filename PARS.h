@@ -88,6 +88,7 @@ class PARS
 		int** calculateParsimonyQuerys (double &t1, double &t2);
 		int** calculateParsimonyQuerysParalelismoGrueso(double &t1, double &t2);
 		int** calculateParsimonyQuerysParalelismoFino(double &t1, double &t2);
+		int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);

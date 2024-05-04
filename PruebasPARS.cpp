@@ -20,7 +20,8 @@ int *PruebasPARS::pruebaQuerys(){
     char *query = parsTest->getArrayQuerySequences();
     char *leaves = parsTest->getArrayReferenceSequences();
     int n_sites = parsTest->get_n_sites();
-    int *parsimony = new int[parsTest->getNumberOfSequences()*n_sites];
+    int n_queries = parsTest->get_n_querys();
+    int *parsimony = new int[parsTest->getNumberOfSequences()*n_queries];
     int node_class, node_id;
     int index = 0;
     typeNode *parsAux = new typeNode[parsTest->getNumInternalNodes()];
@@ -43,17 +44,6 @@ int *PruebasPARS::pruebaQuerys(){
             }
         }
     }
-    /*for (i = 0 ; i < copy_parsNodes[0].number_of_sons; i++){
-        node_class = copy_parsNodes[0].sons_ids[i] & 0x80000000;
-        if (node_class != 0x80000000){
-            node_id = copy_parsNodes[0].sons_ids[i] & 0x7FFFFFFF;
-            parsTest->genInternalNode(nodeP, &leaves[node_id*n_sites], query);
-            break;
-        }
-    }*/
-    
-    
-    //parsimony = parsTest->calculateParsimonyQuerysPub(0, i, nodeP, parsAux);
     return parsimony;
 }
 
@@ -63,6 +53,7 @@ int* PruebasPARS::pruebaPARS(){
     char *leaves = parsTest->getArrayReferenceSequences();
     int n_sites = parsTest->get_n_sites();
     int n_sequences = parsTest->getNumberOfSequences();
+    int n_queries = parsTest->get_n_querys();
     char *new_sequences= new char[n_sites*(n_sequences+1)];
     for (int i = 0; i < n_sites*n_sequences; i++){
         new_sequences[i] = leaves[i];
@@ -81,7 +72,6 @@ int* PruebasPARS::pruebaPARS(){
     PARS *auxPARS = new PARS("","");
     
     auxPARS->set_n_sequences(n_sequences+1);
-    //auxPARS->set_seq(new_sequences);
     auxPARS->set_n_sites(n_sites);
 
     auxPARS->set_num_internal_nodes(parsTest->getNumInternalNodes()+1);
@@ -90,7 +80,7 @@ int* PruebasPARS::pruebaPARS(){
     for (int j = 0; j < parsTest->getNumInternalNodes()+1; j++){
         defPARS[j].characters = new char[n_sites];
     }
-    int *ppp = new int [parsTest->getNumberOfSequences()*parsTest->get_n_querys()]; 
+    int* ppp = new int [n_queries*n_sequences];
     nodeP->number_of_sons = 2;
     int index = 0;
     for (int i = 0; i < parsTest->get_n_querys(); i++){
@@ -136,69 +126,18 @@ int* PruebasPARS::pruebaPARS(){
                         }
 
                     }
-                    /*for (int x = 0; x < auxPARS->getNumInternalNodes(); x++){
-                        for (int y = 0; y < defPARS[x].number_of_sons; y++){
-                            node_class = parsAux[x].sons_ids[y] & 0x80000000;
-                            node_id = parsAux[x].sons_ids[y] & 0x7FFFFFFF;
-                            if (node_class == 0x80000000 && x > j && node_id >= j){
-                                defPARS[x].sons_ids[y]++;
-                            }
-                        }
-                    }*/
                     //LLAMADA
                     auxPARS->set_seq(new_sequences);
                     auxPARS->setParsNodes(defPARS);
                     double t1, t2;
                     ppp[index] = auxPARS->calculateParsimonyRefTree(t1,t2);
-                    
+                    //if (auxPARS->calculateParsimonyRefTree(t1,t2);)
                     parsTest->clonePars(parsAux, copy_parsNodes);
                     index++;
                 }
             }
         }
     }
-    /*int i;
-    for (i = 0 ; i < copy_parsNodes[0].number_of_sons; i++){
-        node_class = copy_parsNodes[0].sons_ids[i] & 0x80000000;
-        if (node_class != 0x80000000){
-            node_id = copy_parsNodes[0].sons_ids[i] & 0x7FFFFFFF;
-            nodeP->sons_ids[0] = nodeP->sons_ids[1] = 0x00000000;
-            nodeP->sons_ids[0] = node_id;
-            nodeP->sons_ids[1] = n_sequences;
-            break;
-        }
-    }*/
-    /*
-    parsAux[0].sons_ids[i] = 0x00000000|(1<<31);
-    for (int j = i+1; j < parsTest->getNumInternalNodes(); j++){
-        for (int k = 0; k < parsAux[j].number_of_sons; k++){
-            node_class = parsAux[j].sons_ids[k] & 0x80000000;
-            //
-            if (node_class == 0x80000000){
-                parsAux[j].sons_ids[k]++;
-            }
-        }
-    }*/
-    
-    /*typeNode *defPARS = new typeNode[parsTest->getNumInternalNodes()+1];
-    for (int j = 0; j < parsTest->getNumInternalNodes()+1; j++){
-        defPARS[j].characters = new char[n_sites];
-    }*/
-    //parsTest->clonePars(&defPARS[1], parsAux);
-    //defPARS[0].sons_ids[0] = nodeP->sons_ids[0];
-    //defPARS[0].sons_ids[1] = nodeP->sons_ids[1];
-    //defPARS[0].number_of_sons = nodeP->number_of_sons;
-    //for (int k = 0; k < def)
-    //for (int j = 0; j < parsTest->getNumInternalNodes()+1; j++){
-    //    defPARS[j].partialParsimony = 0;
-    //}
-    //auxPARS->setParsNodes(defPARS);
-    
-    //auxPARS->set_num_internal_nodes(parsTest->getNumInternalNodes()+1);
-    //double t1, t2;
-    //int ppp = auxPARS->calculateParsimonyRefTree(t1,t2);
-
-    
     return ppp;
 }
 
@@ -213,13 +152,15 @@ void PruebasPARS::iniciarPruebas(){
         printf("%d\n", parsQ[i]);
     }*/
     bool iguales = true;
-    /*for (int i = 0; i < parsTest->get_n_querys()*parsTest->getNumberOfSequences(); i++){
-        if (parsQ[i] == parsP[i]){
+    for (int i = 0; i < parsTest->get_n_querys()*parsTest->getNumberOfSequences(); i++){
+        if (parsQ[i] != parsP[i]){
             iguales = false;
-            printf("EXITO\n");
+            //printf("FARSO\n");
         }
-    }*/
+    }
     if (iguales)
         printf("EXITO\n");
+    else
+        printf("FARSO\n");
     printf("PRUEBAS ESTRICTAS FINALIZADAS\n");
 }

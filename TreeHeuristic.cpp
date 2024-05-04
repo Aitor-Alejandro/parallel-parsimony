@@ -33,9 +33,7 @@ TreeHeuristic::TreeHeuristic(TreeInterface* interface){
 void TreeHeuristic::iniciarGrafo(){
     int aux, aux2;
     for (int i = 0; i < matrix.size(); i++){
-        //aux = arrayLeaves[i];
         for (int j = 1; j < matrix[i].size(); j++){
-            //if j < matrix[i]
             grafo [matrix[i][j-1]][matrix[i][j]] = true;
         }
     }
@@ -84,18 +82,18 @@ void TreeHeuristic::show(){
     printf("-----------------------Show Tree Heuristic---------------------\n");
     //for (int i = 0; i < arrayLeaves.size(); i++)
     //    printf("Leave:%d with id:%d\n", i, arrayLeaves[i]);
-    for (int i = 0; i < matrix.size(); i++){
+    /*for (int i = 0; i < matrix.size(); i++){
         printf("Leave ID: %d with ancestors:->>>", arrayLeaves[i]);
         for (int j = 0; j < matrix[i].size(); j++){
             printf("-%d", matrix[i][j]);
         }
         printf("\n");
-    }
+    }*/
     printf("numNodos:--->>>%d\n", numNodos);
     /*for (int i = 0; i < numNodos; i++){
         printf("%s - ", nodosVisitados[i] ? "true" : "false");
     }*/
-    printf("ROOT::: %d\n", root);
+    /*printf("ROOT::: %d\n", root);
     printf("NUM HOJAS::: %d\n", arrayLeaves.size());
     printf("ARRAY LEAVES-------\n");
     for (int i = 0; i < arrayLeaves.size(); i++){
@@ -140,12 +138,14 @@ void TreeHeuristic::show(){
 }
 
 void TreeHeuristic::setCorrespondencias(int *vec){
-    correspondencias = vec;
+    correspondencias = new int [numInner];
+    for (int i = 0; i < numInner; i++){
+        correspondencias[i] = vec[i];
+    }
 }
 
 void TreeHeuristic::setVectorCorresponcencias(nodePhyl* vec, int nodes){
     copy(&vec[0], &vec[nodes], back_inserter(vectorCorrespondencias));
-    //vectorCorrespondencias = vec;
 }
 
 int* TreeHeuristic::getCorrespondencias(){

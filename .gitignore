@@ -4,10 +4,15 @@ soluciones.txt
 soluciones.out
 solutions.out
 PARS
+PARSss15
+PARSgg15
+PARSff15
 comp_secuenciales.sh
 ejecucion_tiempos_paralelo.sh
 ejecutar_sec.sh
 script.sh
+script_g.sh
+script_f.sh
 script_sec_comparator.sh
 bulk_parallel.sh
 thin_parallel.sh
@@ -19,3 +24,6 @@ solutions/
 lib/
 parallel_data/
 thin_parallel_data/
+tiempos/
+fichero_comparacion/
+tiempos_paralelos_mix/
