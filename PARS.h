@@ -8,7 +8,7 @@
 #include <cmath>
 #include <time.h>
 #include "TreeInterface.h"
-#include "TreeHeuristic.h"
+//#include "TreeHeuristic.h"
 #include "MersenneTwister.h"
 #include <limits>
 #include <fstream>
@@ -33,7 +33,7 @@ typedef struct
 class PARS
 {	
 	TreeInterface* refTree; //Reference tree (BIO++)
-	TreeHeuristic* treeH;
+	//TreeHeuristic* treeH;
 
 	string refFileName; //reference sequences filename
 	SiteContainer* refSites; //BIO++ reference sequences
@@ -53,7 +53,7 @@ class PARS
 
 	typeNode* parsNodes, *copy_parsNodes; //Phylogenetic tree representation using our optimized topological node structure
 	int n_parsNodes; //Number of nodes in the phylogeny
-	int* internal_nodes; //Identifiers of internal nodes
+	//int* internal_nodes; //Identifiers of internal nodes
 	int num_internal_nodes; //Number of internal nodes
 	
 	char** reference_sequences; //reference sequences in hexadecimal codification
@@ -108,7 +108,7 @@ class PARS
 		int get_n_sites();
 		int getTotalParsimony();
 		int get_n_querys();
-		TreeHeuristic* getTreeH();
+		//TreeHeuristic* getTreeH();
 		
 
 		void setParsNodes(typeNode* newParsNodes);

@@ -155,7 +155,7 @@ void PruebasPARS::iniciarPruebas(){
     for (int i = 0; i < parsTest->get_n_querys()*parsTest->getNumberOfSequences(); i++){
         if (parsQ[i] != parsP[i]){
             iguales = false;
-            //printf("FARSO\n");
+            //printf("FALSO\n");
         }
     }
     if (iguales)
