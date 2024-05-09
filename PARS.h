@@ -33,7 +33,6 @@ typedef struct
 class PARS
 {	
 	TreeInterface* refTree; //Reference tree (BIO++)
-	//TreeHeuristic* treeH;
 
 	string refFileName; //reference sequences filename
 	SiteContainer* refSites; //BIO++ reference sequences
@@ -62,6 +61,7 @@ class PARS
 	char** query_sequences; //query sequences in hexadecimal codification
 	char* array_query_sequences; //query sequences in hexadecimal codification (char array)
 	
+	int** matrixParsimony;
 	//ofstream solveFile;
 	private:
 		
@@ -85,10 +85,10 @@ class PARS
 		int calculateParsimonyRefTree (double &t1, double &t2); //Parsimony function code for CPU in char configuration
 
 		/* Parsimony calculations for each Query*/
-		int** calculateParsimonyQuerys (double &t1, double &t2);
-		int** calculateParsimonyQuerysParalelismoGrueso(double &t1, double &t2);
-		int** calculateParsimonyQuerysParalelismoFino(double &t1, double &t2);
-		int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
+		void calculateParsimonyQuerys (double &t1, double &t2);
+		void calculateParsimonyQuerysParalelismoGrueso(double &t1, double &t2);
+		void calculateParsimonyQuerysParalelismoFino(double &t1, double &t2);
+		//int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
