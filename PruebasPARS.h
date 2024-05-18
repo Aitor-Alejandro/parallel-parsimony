@@ -12,8 +12,8 @@ class PruebasPARS{
         PruebasPARS(PARS pars);
         void iniciarEstructuras();
         void copiaSeguridadParsNodes();
-        int *pruebaQuerys();
-        int *pruebaPARS();
+        int pruebaQuerys();
+        int pruebaPARS();
         void iniciarPruebas();
 };
 

@@ -33,6 +33,7 @@ typedef struct
 class PARS
 {	
 	TreeInterface* refTree; //Reference tree (BIO++)
+	//TreeHeuristic* treeH;
 
 	string refFileName; //reference sequences filename
 	SiteContainer* refSites; //BIO++ reference sequences
@@ -50,7 +51,7 @@ class PARS
 	DNA* alphabet; //BIO++ DNA alphabet
 	MTRand* mtr; //Random number generator
 
-	typeNode* parsNodes, *copy_parsNodes; //Phylogenetic tree representation using our optimized topological node structure
+	typeNode* parsNodes;//, *copy_parsNodes; //Phylogenetic tree representation using our optimized topological node structure
 	int n_parsNodes; //Number of nodes in the phylogeny
 	//int* internal_nodes; //Identifiers of internal nodes
 	int num_internal_nodes; //Number of internal nodes
@@ -60,17 +61,17 @@ class PARS
 	
 	char** query_sequences; //query sequences in hexadecimal codification
 	char* array_query_sequences; //query sequences in hexadecimal codification (char array)
-	
-	int** matrixParsimony;
 	//ofstream solveFile;
 	private:
 		
 		void modifyVector(typeNode* internalNode, int father, int son);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
+		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int local_n_sites);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
 		void genInternalNode(typeNode* internalNode, char* query, char* characters);
+		void genInternalNode(typeNode* internalNode, char* query, char* characters, int _local_n_sites);
 		PARS(string _refFileName, string _queryFileName); //Constructor
 		/* Initialization procedures */
 		PhylogeneticTree* readTreeFromFile (FILE* file, int _id); //Reads the reference phylogenetic tree from file
@@ -85,10 +86,9 @@ class PARS
 		int calculateParsimonyRefTree (double &t1, double &t2); //Parsimony function code for CPU in char configuration
 
 		/* Parsimony calculations for each Query*/
-		void calculateParsimonyQuerys (double &t1, double &t2);
-		void calculateParsimonyQuerysParalelismoGrueso(double &t1, double &t2);
-		void calculateParsimonyQuerysParalelismoFino(double &t1, double &t2);
-		//int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
+		int** calculateParsimonyQuerys (double &t1, double &t2);
+		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
+		int** calculateParsimonyQuerysFino(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
@@ -98,7 +98,7 @@ class PARS
 		void cloneRefSeq(char* dst, char* src);
 		//void writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony);
 		/* Main method */
-		int run (string fic_tree, double &t1, double &t2); //Main method, where the placement takes place
+		int run (string fic_tree, double &t1, double &t2, int mode); //Main method, where the placement takes place
 		
 		typeNode* getParsNodes();
 		int getNumInternalNodes();
@@ -108,7 +108,6 @@ class PARS
 		int get_n_sites();
 		int getTotalParsimony();
 		int get_n_querys();
-		//TreeHeuristic* getTreeH();
 		
 
 		void setParsNodes(typeNode* newParsNodes);
@@ -119,6 +118,8 @@ class PARS
 
 		//void setParsNodes(typeNode* newParsNodes);
 		~PARS(); //Destructor
+		
+	
 };
 
 #endif	//_PARS_H_
