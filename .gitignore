@@ -10,6 +10,7 @@ sal5q.sh
 script_f.sh
 script_neo.sh
 PARS
+PARS2
 solutions/
 lib/
 parallel_data/
@@ -17,4 +18,4 @@ thin_parallel_data/
 tiempos/
 fichero_comparacion/
 tiempos_paralelos_mix/
-tiempos_secuenciales
+tiempos_secuenciales/

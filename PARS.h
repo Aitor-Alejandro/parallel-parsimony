@@ -25,6 +25,9 @@ typedef struct
 	int father = -1;//FATHER ID IN GLOBAL TREE, NEEDS CORRESPONDENCY ARRAY
 	int id_node;
 	char* characters;
+	//bool* modificado;
+	//int* new_part_pars;
+	//char** new_characters;
 	short number_of_sons; //Number of children of the node
 	int sons_ids [MAX_SONS]; //Identifiers of the children node ID IF GLOBAL TREE
 }typeNode;
@@ -61,7 +64,8 @@ class PARS
 	
 	char** query_sequences; //query sequences in hexadecimal codification
 	char* array_query_sequences; //query sequences in hexadecimal codification (char array)
-	//ofstream solveFile;
+
+	//int** matrixParsimony;
 	private:
 		
 		void modifyVector(typeNode* internalNode, int father, int son);
@@ -87,13 +91,14 @@ class PARS
 
 		/* Parsimony calculations for each Query*/
 		int** calculateParsimonyQuerys (double &t1, double &t2);
-		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
-		int** calculateParsimonyQuerysFino(double &t1, double &t2);
+		//int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
+		//int** calculateParsimonyQuerysFino(double &t1, double &t2);
+		//int** calculateParsimonyQuerysFino2(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
 		void clonePars(typeNode* dst, typeNode* src);
-		void restaurar(typeNode*dst, typeNode*src, int index_node);
+		void restaurar(typeNode*dst, const typeNode*src, int index_node);
 		/*clone reference sequences*/
 		void cloneRefSeq(char* dst, char* src);
 		//void writeFileBruteForce(ofstream solveFile, typeNode* parsBest, int queryId, int position, int bestParsimony);

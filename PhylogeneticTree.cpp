@@ -66,8 +66,10 @@ void PhylogeneticTree::initialize (SiteContainer* _sites, SiteContainer* _comple
 void PhylogeneticTree::initializeTree()
 {
 	if(inferredTree != NULL) { 
-		delete(inferredTree);
-		delete(terminal_nodes_seqpositions);
+		//delete(inferredTree);
+		delete inferredTree;
+		//delete(terminal_nodes_seqpositions);
+		delete[] terminal_nodes_seqpositions;
 	}
 	int num_terminal_nodes;
 	vector< int > aux_terminal;
@@ -119,7 +121,7 @@ int* PhylogeneticTree::getTerminalPositions()
 void PhylogeneticTree::setInferredTree(TreeTemplate<Node>* treeData)
 {
 	if (inferredTree != NULL)
-		delete(inferredTree);
+		delete inferredTree;
 	inferredTree = new TreeTemplate<Node> (*treeData);
 }
 
@@ -154,9 +156,11 @@ string PhylogeneticTree::optimizeParsimony(TreeTemplate<Node>*treeData)
 		parsimonytree = OptimizationTools::optimizeTreeNNI(new DRTreeParsimonyScore (*treeData, *sites, true),0);
 		res = TreeTemplateTools::treeToParenthesis(parsimonytree->getTree(), false); //Por ahora dejao asi
 	
-		delete(inferredTree);
+		//delete(inferredTree);
+		delete inferredTree;
 		inferredTree = new TreeTemplate<Node> (parsimonytree->getTree());
-		delete(parsimonytree);
+		//delete(parsimonytree);
+		delete parsimonytree;
 		
 	}catch(Exception exp){cout<<"Exception on topological search"<<endl;	}
 
@@ -302,7 +306,8 @@ int PhylogeneticTree::writeTree(FILE* file)
     		fwrite(&c_string[i], sizeof(char), 1, file);
   	}
 	code.writeNewick (file);
-	delete(c_string);
+	//delete(c_string);
+	delete[] c_string;
 	return 1;
 
 }
@@ -327,8 +332,10 @@ void PhylogeneticTree::clone (const PhylogeneticTree & _tree)
     {
         if (inferredTree != NULL)
         {
-            delete(inferredTree);
-            delete(terminal_nodes_seqpositions);
+            //delete(inferredTree);
+			delete inferredTree;
+            //delete(terminal_nodes_seqpositions);
+			delete[] terminal_nodes_seqpositions;
         }
         inferredTree = new TreeTemplate<Node> (*_tree.inferredTree);
 
@@ -363,6 +370,10 @@ PhylogeneticTree::~PhylogeneticTree(){
 	//if(alphabet != NULL)	delete(alphabet);
 	//if (completeSites != NULL) delete(completeSites);
 	//if (sites != NULL) delete(sites);
-	if(inferredTree != NULL) delete(inferredTree);
-	if(terminal_nodes_seqpositions!=NULL) delete(terminal_nodes_seqpositions);
+	//if(inferredTree != NULL) delete(inferredTree);
+	//if(terminal_nodes_seqpositions!=NULL) delete(terminal_nodes_seqpositions);
+	if (inferredTree!=NULL)
+		delete inferredTree;
+	if (terminal_nodes_seqpositions!=NULL)
+		delete[] terminal_nodes_seqpositions;
 }
