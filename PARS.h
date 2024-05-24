@@ -25,9 +25,6 @@ typedef struct
 	int father = -1;//FATHER ID IN GLOBAL TREE, NEEDS CORRESPONDENCY ARRAY
 	int id_node;
 	char* characters;
-	//bool* modificado;
-	//int* new_part_pars;
-	//char** new_characters;
 	short number_of_sons; //Number of children of the node
 	int sons_ids [MAX_SONS]; //Identifiers of the children node ID IF GLOBAL TREE
 }typeNode;
@@ -70,7 +67,7 @@ class PARS
 		
 		void modifyVector(typeNode* internalNode, int father, int son);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
-		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int local_n_sites);
+		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int local_n_sites, char** matrix_aux);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
@@ -91,7 +88,7 @@ class PARS
 
 		/* Parsimony calculations for each Query*/
 		int** calculateParsimonyQuerys (double &t1, double &t2);
-		//int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
+		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
 		//int** calculateParsimonyQuerysFino(double &t1, double &t2);
 		//int** calculateParsimonyQuerysFino2(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);

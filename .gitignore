@@ -1,5 +1,6 @@
 EjemplosUso.txt
 InstruccionesCompilacion.txt
+out.out
 draw_tree.py
 python.py
 compileGCC.sh
@@ -10,7 +11,6 @@ sal5q.sh
 script_f.sh
 script_neo.sh
 PARS
-PARS2
 solutions/
 lib/
 parallel_data/
