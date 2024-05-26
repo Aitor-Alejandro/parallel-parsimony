@@ -27,6 +27,7 @@ typedef struct
 	char* characters;
 	short number_of_sons; //Number of children of the node
 	int sons_ids [MAX_SONS]; //Identifiers of the children node ID IF GLOBAL TREE
+	int depth;
 }typeNode;
 
 
@@ -90,7 +91,7 @@ class PARS
 		int** calculateParsimonyQuerys (double &t1, double &t2);
 		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
 		//int** calculateParsimonyQuerysFino(double &t1, double &t2);
-		//int** calculateParsimonyQuerysFino2(double &t1, double &t2);
+		int** calculateParsimonyQuerysFino2(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
