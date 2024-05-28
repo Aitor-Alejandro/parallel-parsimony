@@ -1,5 +1,6 @@
 #include "PARS.h"
 
+#define NUM_BYTES 32
 //#define NUM_CORES 6
 /**
 *	Constructor, initializes variables and data structures. Parameters:
@@ -38,7 +39,12 @@ double PARS::get_time (void)
 {
 		return omp_get_wtime();
 }
-
+void show(typeNode* node, int n_sites){
+	for(int i = 0; i < n_sites; i++){
+		printf("%d", node->characters[i]);
+	}
+	printf("\n");
+}
 
 /**
 *	Method that reads from a file the Newick code of the reference tree. Parameters:
@@ -586,12 +592,9 @@ int PARS::calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNod
 	int node_class, node_id;
 	char site_value, aux_value, son_value;
 	int node;
-	//int pars_diff=totalParsimony;
 	node = fatherNode;
 	while (node != - 1){
-		//parsAux[node].characters = new char[local_n_sites];
 		parsAux[node].characters = matrix_aux[parsAux[node].depth - 1];
-		//pars_diff -= parsAux[node].partialParsimony;
 		parsAux[node].partialParsimony = 0;
 		for (int i = 0; i < local_n_sites; i++){
 			site_value = 31;
@@ -624,7 +627,6 @@ int PARS::calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNod
 		total_pars += parsAux[l].partialParsimony;
 	}
 	total_pars += internalNode->partialParsimony;
-	//pars_diff += internalNode->partialParsimony;
 	return total_pars;
 }
 
@@ -720,13 +722,9 @@ int** PARS::calculateParsimonyQuerys(double &t1, double &t2){
 				if (node_class == 0x80000000){
 					genInternalNode(auxNode, query_line, parsAux[node_id].characters, n_s);
 					auxParsimony = calculateParsimonyQuerysPriv(j, k, auxNode, parsAux, n_s, matrix_aux);
-					//genInternalNode(&auxNode_parallel[th_id], query_line, parsAux_parallel[th_id][node_id].characters, n_sites);
-					//auxParsimony = calculateParsimonyQuerysPriv(j, k , &auxNode_parallel[th_id], parsAux_parallel[th_id], n_sites);
 				}else{
 					genInternalNode(auxNode, query_line, &array_references[node_id*n_s], n_s);
 					auxParsimony = calculateParsimonyQuerysPriv(j, k, auxNode, parsAux, n_s, matrix_aux);
-					//genInternalNode(&auxNode_parallel[th_id], query_line, &array_reference_sequences[node_id*n_sites], n_sites);
-					//auxParsimony = calculateParsimonyQuerysPriv(j, k, &auxNode_parallel[th_id], parsAux_parallel[th_id], n_sites);
 				}
 				if (auxParsimony < matrixParsimony[i][2]){
 					matrixParsimony[i][0] = j;
@@ -1113,6 +1111,148 @@ int** PARS::calculateParsimonyQuerysFino2(double &t1, double &t2){
 	return matrixParsimony;
 }
 
+void PARS::genInternalNodeSIMD(typeNode* internalNode, char* query, char* characters, int n_sites_vectorizado){
+	int i, m;
+	const int v = 32;
+	char aux_value[v];
+	int part_pars = 0;
+	for (i = 0; i < n_sites_vectorizado; i += v){
+		#pragma omp simd simdlen(v) reduction(+:part_pars)
+		for (m = 0; m < v; m++){
+			aux_value[m] = query[i+m] & characters[i+m];
+			if (aux_value[m] == 0)
+			{
+				part_pars++;
+				aux_value[m] = query[i+m] | characters[i+m];
+			}
+			internalNode->characters[i+m] = aux_value[m];
+		}
+	}
+	internalNode->partialParsimony = part_pars;
+}
+
+int PARS::calculateParsimonyQuerysPrivSIMD(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int n_sites_vectorizado, char** matrix_aux){
+	int i,j,k,m;
+	const int v = NUM_BYTES;
+	parsAux[num_internal_nodes-1].father = -1;
+	int node_class, node_id;
+	char site_value[v], aux_value[v], son_value[v];
+	int node;
+	node = fatherNode;
+	while (node != -1){
+		node = parsAux[node].father;
+	}
+}
+
+int** PARS::calculateParsimonyQuerysSIMD(double &t1, double &t2){
+	int i,j,k,l;
+	char* query_line;
+	//int num_sons; //number of children of the node currently processed
+	int node_class; //type of node (leaf or internal)
+	int node_id; //identifier of the node currently processed
+	//char aux_value; //auxiliar variable for fitch operations
+	//char site_value; //variable to store the state calculated for a node
+	//char son_value; //variable to store the state read from a child node
+
+	int auxParsimony = totalParsimony;
+	int total_depth = parsNodes[num_internal_nodes-1].depth;
+	
+	const int v = 32;
+	int n_sites_vectorizado = std::ceil((double)n_sites/v);
+	n_sites_vectorizado = n_sites_vectorizado*v;
+
+	typeNode* auxNode = new typeNode;
+	auxNode->characters = new char[n_sites_vectorizado];
+	int num_th = omp_get_num_threads();
+	typeNode* parsAux = new typeNode[num_internal_nodes];
+	char** matrix_characters = new char*[num_internal_nodes];
+	char** matrix_aux = new char*[total_depth];
+	for (i = 0; i < total_depth; i++)
+		matrix_aux[i] = new char[n_sites_vectorizado];
+	for (i = 0; i < num_internal_nodes; i++){
+		matrix_characters[i] = new char [n_sites_vectorizado];
+		parsAux[i].characters = matrix_characters[i];
+	}
+
+	cloneParsNodes(parsAux);
+	
+	int** matrixParsimony;
+	matrixParsimony=(int**)malloc(n_queries * sizeof(int*));
+	for (int n=0; n<n_queries; n++){
+		matrixParsimony[n]=(int*)malloc(3*sizeof(int));
+		matrixParsimony[n][2] = INT_MAX;
+	}
+	
+	char **queries = new char* [n_queries];
+	for (i = 0; i < n_queries; i++){
+		queries[i] = new char[n_sites_vectorizado];
+		for (j = 0; j < n_sites; j++)
+			queries[i][j] = query_sequences[i][j];
+		for (j = n_sites; j < n_sites_vectorizado; j++)
+			queries[i][j] = 0x10;
+	}
+	
+	char **references = new char* [n_sequences];
+	for (i = 0; i< n_sequences; i++){
+		references[i] = new char[n_sites_vectorizado];
+		for (j = 0; j < n_sites; j++)
+			references[i][j] = reference_sequences[i][j];
+		for (j = n_sites; j < n_sites_vectorizado; j++)
+			references[i][j] = 0x10;
+	}
+
+	for (i = 0; i < num_internal_nodes; i++){
+		for (j = n_sites; j < n_sites_vectorizado; j++)
+			matrix_characters[i][j] = 0x10;
+	}
+	int n_q = n_queries;
+	int n_s = n_sites;
+	int num_internal = num_internal_nodes;
+	t1 = get_time();
+	for (i = 0; i < n_q; i++){
+		printf("%d\n", i);
+		query_line = queries[i];
+		for (j = 0; j < num_internal; j++){
+			for (k = 0; k < parsAux[j].number_of_sons;k++){
+				node_class = parsAux[j].sons_ids[k] & 0x80000000;
+				node_id = parsAux[j].sons_ids[k] & 0x7FFFFFFF;
+				if (node_class == 0x80000000){
+					genInternalNodeSIMD(auxNode, query_line, parsAux[node_id].characters, n_sites_vectorizado);
+					//show(auxNode, n_s);
+				}else{
+					genInternalNodeSIMD(auxNode, query_line, references[node_id], n_sites_vectorizado);
+					//show(auxNode, n_s);
+				}
+			}
+		}
+	}
+	t2 = get_time();
+	printf("\n");
+	printf("INIT Borrado a cachos\n");
+	delete[] auxNode->characters;
+	for (int l= 0; l < num_internal_nodes;l++){
+		delete[] matrix_characters[l];
+	}
+	printf("Borrado a cachos\n");
+	for (int l = 0; l < total_depth; l++)
+		delete[] matrix_aux[l];
+	for (int l = 0; l < n_queries; l++)
+		delete[] queries[l];
+	for (int l = 0; l < n_sequences; l++)
+		delete[] references[l];
+	delete[] matrix_aux;
+	delete[] matrix_characters;
+	delete[] parsAux;
+	delete[] queries;
+	delete[] references;
+	delete auxNode;
+	
+	printf("-------TIME TO EVALUEATE PARSIMONY OF QUERIES (SEQ. VER.)-------\n");
+	printf("Reference tree evaluation queries: Time spent: %f\n", t2-t1);
+	printf("///////////////////////////////////////////////////////////\n");
+	return matrixParsimony;
+}
+
 void PARS::cloneParsNodes(typeNode* dest1, typeNode* dest2){
 	//printf("Entrando en cloneParsNodes\n");
 	int i, j ,k;
@@ -1317,8 +1457,8 @@ int PARS::run (string fic_tree, double &t1, double &t2, int _mode)
 	switch(mode){
 		case 0:	matrix=calculateParsimonyQuerys(t1,t2); break;
 		case 1:	matrix=calculateParsimonyQuerysGrueso(t1,t2); break;
-		//case 2: matrix=calculateParsimonyQuerysFino(t1,t2); break;
-		case 3: matrix=calculateParsimonyQuerysFino2(t1,t2); break;
+		case 2: matrix=calculateParsimonyQuerysFino2(t1,t2); break;
+		case 3: matrix=calculateParsimonyQuerysSIMD(t1,t2); break;
 		default:
 			printf("Not correct mode:\n");
 	}
@@ -1363,10 +1503,10 @@ int PARS::run (string fic_tree, double &t1, double &t2, int _mode)
 		delete seqReader2;
 	seqReader2 = NULL;
 	//matrix = calculateParsimonyQuerys(t1, t2);
-	for (int i = 0; i < n_queries; i++){
+	/*for (int i = 0; i < n_queries; i++){
 		printf("%d;%d;%d;%d\n", i,matrix[i][0], matrix[i][1], matrix[i][2]);
 		
-	}
+	}*/
 	//clonePars(parsNodes, copy_parsNodes);
 	//delete[]matrix;
 	//free(matrix);

@@ -69,11 +69,13 @@ class PARS
 		void modifyVector(typeNode* internalNode, int father, int son);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int local_n_sites, char** matrix_aux);
+		int calculateParsimonyQuerysPrivSIMD(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int n_sites_vectorizado, char** matrix_aux);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
 		void genInternalNode(typeNode* internalNode, char* query, char* characters);
 		void genInternalNode(typeNode* internalNode, char* query, char* characters, int _local_n_sites);
+		void genInternalNodeSIMD(typeNode* internalNode, char* query, char* characters, int n_sites_vectorizado);
 		PARS(string _refFileName, string _queryFileName); //Constructor
 		/* Initialization procedures */
 		PhylogeneticTree* readTreeFromFile (FILE* file, int _id); //Reads the reference phylogenetic tree from file
@@ -92,6 +94,7 @@ class PARS
 		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
 		//int** calculateParsimonyQuerysFino(double &t1, double &t2);
 		int** calculateParsimonyQuerysFino2(double &t1, double &t2);
+		int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		void cloneParsNodes(typeNode* dest1, typeNode* dest2);
 		void cloneParsNodes(typeNode* dest);
