@@ -69,7 +69,7 @@ class PARS
 		void modifyVector(typeNode* internalNode, int father, int son);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
 		int calculateParsimonyQuerysPriv(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int local_n_sites, char** matrix_aux);
-		int calculateParsimonyQuerysPrivSIMD(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int n_sites_vectorizado, char** matrix_aux);
+		int calculateParsimonyQuerysPrivSIMD(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux, int n_sites_vectorizado, char** matrix_aux, char** references);
 	protected: 
 		double get_time(); //Get timestamp using omp_get_wtime
 	public:
@@ -92,7 +92,7 @@ class PARS
 		/* Parsimony calculations for each Query*/
 		int** calculateParsimonyQuerys (double &t1, double &t2);
 		int** calculateParsimonyQuerysGrueso(double &t1, double &t2);
-		//int** calculateParsimonyQuerysFino(double &t1, double &t2);
+		int** calculateParsimonyQuerysFino(double &t1, double &t2);
 		int** calculateParsimonyQuerysFino2(double &t1, double &t2);
 		int** calculateParsimonyQuerysSIMD(double &t1, double &t2);
 		int calculateParsimonyQuerysPub(int fatherNode, int son_replaced, typeNode* internalNode, typeNode* parsAux);
